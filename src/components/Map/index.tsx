@@ -1,5 +1,5 @@
 import { Box } from "./styles";
 
 export function Map() {
-    return <Box></Box>
+  return <Box></Box>;
 }
