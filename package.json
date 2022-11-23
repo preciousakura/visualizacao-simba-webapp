@@ -11,16 +11,25 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "@observablehq/plot": "^0.6.0",
+    "@observablehq/runtime": "^4.28.0",
+    "@observablehq/stdlib": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
+    "d2265241a3dc206f": "https://api.observablehq.com/d/d2265241a3dc206f@796.tgz?v=3",
+    "d3": "^7.6.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "react-vega": "^7.6.0",
+    "styled-components": "^5.3.6",
+    "vega": "^5.22.1",
+    "vega-lite": "^5.6.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
