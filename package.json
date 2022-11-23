@@ -7,19 +7,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
-    "format": "prettier .  --write",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "format": "prettier .  --write"
+
   },
   "dependencies": {
-    "@observablehq/plot": "^0.6.0",
-    "@observablehq/runtime": "^4.28.0",
-    "@observablehq/stdlib": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
-    "d2265241a3dc206f": "https://api.observablehq.com/d/d2265241a3dc206f@796.tgz?v=3",
     "d3": "^7.6.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
