@@ -8,29 +8,17 @@ import { Box } from './styles';
 const { Option } = Select;
 
 export function Home() {
-  const [data, setData] = useState<Data[]>();
+  const [data, setData] = useState<any[]>();
 
   useEffect(() => {
     const res = async () => {
       await d3
         .csv(
-          'https://raw.githubusercontent.com/SergioGarciaBF/Testes/main/PMP-BS%20%C3%81rea%20RJ%202.csv'
+          'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/simba.csv'
         )
         .then((res) => {
-          const dataFormatted: Data[] = res.map((d) => {
-            return {
-              ameacada: d['Amea�ada'] as string,
-              classe: d['Classe'] as string,
-              codigo: d['Codigo'] as string,
-              condicao: d['Condi��o'] as string,
-              especie: d['Especie'] as string,
-              estagio: d['Estagio de desenvolvimento'] as string,
-              familia: d['Fam�lia'] as string,
-              genero: d['G�nero'] as string,
-              ordem: d['Ordem'] as string,
-              oleo: d['Presenca de oleo'] as string,
-              subordem: d['Subordem'] as string
-            };
+          const dataFormatted = res.map((d) => {
+            return d;
           });
           setData(dataFormatted);
         });
