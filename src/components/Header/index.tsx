@@ -1,5 +1,4 @@
 import { Box } from './styles';
-import logo from '../../assets/logo.png';
 
 export function Header() {
   return (
@@ -7,7 +6,6 @@ export function Header() {
       <h2>Seja Bem-Vindo!</h2>
       <p className="tag-data">Última atualização: 05/12/2022</p>
       <div className="box-intro">
-        <img src={logo} alt="logo do simba" />
         <div className="text">
           <p>
             Os <b>Projetos de Monitoramento de Praias (PMP)</b> são

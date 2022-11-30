@@ -1,39 +1,38 @@
 import { VegaLite, VisualizationSpec } from 'react-vega';
+import { Data } from 'simba';
 
 interface HorizontalBarProps {
-  data: any;
+  data: { table: Data[] };
+  width: number;
 }
 
-export function HorizontalBar({ data }: HorizontalBarProps) {
+export function HorizontalBar({ data, width }: HorizontalBarProps) {
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
-    width: 500,
-    height: 50,
-    data: { name: 'table' }, // note: vega-lite data attribute is a plain object instead of an array
+    width: width,
+    height: 300,
     mark: 'bar',
     encoding: {
       x: {
         aggregate: 'count',
-        field: 'Identificador da ocorrencia',
-        //field: 'precipitation',
-        //type: 'Quantitative',
+        field: 'id',
+        type: 'quantitative',
         title: 'Quantidade de Ocorrências'
       },
       y: {
-        field: 'Classe',
-        //field: "weather",
-        //type: 'Nominal',
+        field: 'classe',
+        type: 'nominal',
         title: 'Classe',
         sort: '-x'
       },
       tooltip: [
-        { field: 'Classe', title: 'Classe' },
+        { field: 'classe', title: 'Classe' },
         { aggregate: 'count', field: 'Classe', title: 'Ocorrências' }
       ]
-      //tooltip: [{field: "weather", title: "Classe"}, {aggregate: "count", field: "precipitation", title: "Ocorrências"}]
     },
     title: 'Classes mais encontradas',
-    usermeta: { embedOptions: { renderer: 'svg' } }
+    usermeta: { embedOptions: { renderer: 'svg' } },
+    data: { name: 'table' }
   };
 
   return <VegaLite data={data} spec={spec} />;

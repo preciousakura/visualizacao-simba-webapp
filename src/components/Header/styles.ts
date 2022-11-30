@@ -12,7 +12,7 @@ export const Box = styled.div`
   }
   .box-intro {
     display: flex;
-    border: 1px solid #345547;
+    border: 1px solid #e3e6e4;
     border-radius: 7px;
     padding: 1.2rem;
     gap: 1rem;
