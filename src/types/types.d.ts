@@ -1,7 +1,7 @@
 declare module 'simba' {
   interface Data {
     condicao: string;
-    data: Date;
+    data?: Date;
     estagio: string;
     ameacada: string;
     classe: string;

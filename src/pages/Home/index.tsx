@@ -14,22 +14,26 @@ export function Home() {
     const res = async () => {
       await d3
         .csv(
-          'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/simba.csv'
+          'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/simbaData.csv'
         )
         .then((res) => {
-          const dataFormatted: any[] = res.map((d) => {
+          const dataFormatted: Data[] = res.map((d) => {
+            const df = d['Data/Hora']?.split(' ')[0];
+            const data_hora = df ? new Date(df) : undefined;
             return {
               condicao: d['Condição'] as string,
-              data: d['Data/Hora'] as string,
-              estagio: d['"Estágio de desenvolvimento" '] as string,
-              ameacada: d['"Espécie ameaçada"'] as string,
-              classe: d['"OFAI - Classe do indivíduo" '] as string,
-              ordem: d[''] as string,
-              subordem: d[''] as string,
-              familia: d[''] as string,
-              genero: d[''] as string,
-              municipio: d[''] as string,
-              id: d[''] as string
+              data: data_hora,
+              estagio: d['Estágio de desenvolvimento'] as string,
+              ameacada: d['Espécie ameaçada'] as string,
+              classe: d['OFAI - Classe do indivíduo'] as string,
+              ordem: d['OFAI - Ordem do indivíduo'] as string,
+              subordem: d['OFAI - Subordem do indivíduo'] as string,
+              familia: d['OFAI - Família do indivíduo'] as string,
+              genero: d['OFAI - Sexo'] as string,
+              municipio: d['Cidade'] as string,
+              id: d['Identificador da ocorrência'] as string,
+              latitude: Number(d['Ponto - Lat']),
+              longitude: Number(d['Ponto - Long'])
             };
           });
           setData(dataFormatted);
