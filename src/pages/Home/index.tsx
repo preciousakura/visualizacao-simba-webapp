@@ -1,43 +1,22 @@
 import { Select, Tabs } from 'antd';
-import { Data } from 'simba';
-import * as d3 from 'd3';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Header, HorizontalBar } from '../../components';
 import { Box } from './styles';
-
+import Papa from 'papaparse';
 const { Option } = Select;
 
 export function Home() {
-  const [data, setData] = useState<Data[]>();
+  const [data, setData] = useState<any>();
 
-  useEffect(() => {
-    const res = async () => {
-      await d3
-        .csv(
-          'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/simbaData.csv'
-        )
-        .then((res) => {
-          const dataFormatted: Data[] = res.map((d) => {
-            return {
-              condicao: d['Condição'] as string,
-              data: d['Data/Hora'] as string,
-              estagio: d[''] as string,
-              ameacada: d['"Espécie ameaçada"'] as string,
-              classe: d[' "OFAI - Classe do indivíduo" '] as string,
-              ordem: d[''] as string,
-              subordem: d[''] as string,
-              familia: d[''] as string,
-              genero: d[''] as string,
-              municipio: d[''] as string,
-              id: d[''] as string
-            };
-          });
-          setData(dataFormatted);
-        });
-    };
-    res();
-  }, []);
-  console.log(data);
+  Papa.parse('../../data/simba.csv', {
+    header: true,
+    download: true,
+    dynamicTyping: true,
+    complete: function (results) {
+      console.log(results);
+    }
+  });
+
   return (
     <Box>
       <Header />
@@ -65,7 +44,7 @@ export function Home() {
         </Tabs.TabPane>
       </Tabs>
 
-      <HorizontalBar data={data} />
+      <HorizontalBar data={[]} />
     </Box>
   );
 }
