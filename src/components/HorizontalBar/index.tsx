@@ -1,39 +1,42 @@
 import { VegaLite, VisualizationSpec } from 'react-vega';
 import { Data } from 'simba';
+import { useBoxWidth } from '../../hooks/useBoxWidth';
 
 interface HorizontalBarProps {
   data: { table: Data[] };
-  width: number;
+  x: any;
+  y: any;
+  title: string;
+  tooltip?: any;
 }
 
-export function HorizontalBar({ data, width }: HorizontalBarProps) {
+export function HorizontalBar({
+  data,
+  x,
+  y,
+  title,
+  tooltip
+}: HorizontalBarProps) {
+  const { boxRef, width } = useBoxWidth<HTMLDivElement>();
+
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     width: width,
     height: 300,
     mark: 'bar',
     encoding: {
-      x: {
-        aggregate: 'count',
-        field: 'id',
-        type: 'quantitative',
-        title: 'Quantidade de Ocorrências'
-      },
-      y: {
-        field: 'classe',
-        type: 'nominal',
-        title: 'Classe',
-        sort: '-x'
-      },
-      tooltip: [
-        { field: 'classe', title: 'Classe' },
-        { aggregate: 'count', field: 'Classe', title: 'Ocorrências' }
-      ]
+      x: x,
+      y: y,
+      tooltip: tooltip
     },
-    title: 'Classes mais encontradas',
+    title: title,
     usermeta: { embedOptions: { renderer: 'svg' } },
     data: { name: 'table' }
   };
 
-  return <VegaLite data={data} spec={spec} />;
+  return (
+    <div ref={boxRef}>
+      <VegaLite data={data} spec={spec} />
+    </div>
+  );
 }

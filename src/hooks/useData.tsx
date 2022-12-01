@@ -8,13 +8,13 @@ import {
 import { Data } from 'simba';
 import * as d3 from 'd3';
 import { useFilter } from './useFilter';
-
+import rjTopoJson from '../data/rj_topojson.json';
 interface DataContextProviderProps {
   children: ReactNode;
 }
 
 interface DataContextDataProps {
-  data: { table: Data[] };
+  data: { table: Data[]; counties?: any };
 }
 
 export const DataContext = createContext({} as DataContextDataProps);
@@ -52,7 +52,7 @@ export function DataProvider({ children }: DataContextProviderProps) {
               longitude: Number(d['Ponto - Long']?.replaceAll(',', '.'))
             };
           });
-          const d = { table: dataFormatted };
+          const d = { table: dataFormatted, counties: rjTopoJson };
           setData(d);
           setFilterData(d);
         });

@@ -1,11 +1,9 @@
 import { Tabs } from 'antd';
-import { Filter, Header, HorizontalBar } from '../../components';
+import { Filter, Header, HorizontalBar, Map } from '../../components';
 import { Box } from './styles';
-import { useBoxWidth } from '../../hooks/useBoxWidth';
 import { useData } from '../../hooks/useData';
 
 export function Home() {
-  const { boxRef, width } = useBoxWidth<HTMLDivElement>();
   const { data } = useData();
   return (
     <Box>
@@ -23,9 +21,27 @@ export function Home() {
         </Tabs.TabPane>
       </Tabs>
 
-      <div ref={boxRef}>
-        <HorizontalBar width={width} data={data} />
-      </div>
+      <HorizontalBar
+        data={data}
+        y={{
+          field: 'classe',
+          type: 'nominal',
+          title: 'Classe',
+          sort: '-x'
+        }}
+        x={{
+          aggregate: 'count',
+          field: 'id',
+          type: 'quantitative',
+          title: 'Ocorrências'
+        }}
+        title={''}
+        tooltip={[
+          { field: 'classe', title: 'Classe' },
+          { aggregate: 'count', field: 'Classe', title: 'Ocorrências' }
+        ]}
+      />
+      <Map data={data} />
     </Box>
   );
 }
