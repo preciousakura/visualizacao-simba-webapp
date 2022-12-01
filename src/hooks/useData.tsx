@@ -42,7 +42,10 @@ export function DataProvider({ children }: DataContextProviderProps) {
               condicao: d['Condição'] as string,
               data: df,
               estagio: d['Estágio de desenvolvimento'] as string,
-              ameacada: d['Espécie ameaçada'] as string,
+              ameacada:
+                d['Espécie ameaçada'] === ''
+                  ? 'Não informado'
+                  : (d['Espécie ameaçada'] as string),
               classe:
                 d['OFAI - Classe do indivíduo'] === ''
                   ? 'Não informado'

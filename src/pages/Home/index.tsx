@@ -1,12 +1,13 @@
 import { Select, Tabs } from 'antd';
 import { useState } from 'react';
-import { Filter, Header, Map } from '../../components';
+import { Filter, Header, HorizontalGroupBar } from '../../components';
 import {
   Classe,
   Familia,
   Ordem,
   Subordem
-} from '../../components/GraphByOccurrence';
+} from '../../components/GraphBarByOccurrence';
+import { Ameaca, Condicao, Estagio } from '../../components/GraphPieByProfile';
 const { Option } = Select;
 import { Box, BoxText } from './styles';
 
@@ -16,17 +17,31 @@ export function Home() {
     <Box>
       <Header />
       <Filter />
+      <h2>Perfil</h2>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
       <Tabs>
         <Tabs.TabPane tab="Condição" key="item-1">
-          Condição
+          <Condicao />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Estágio" key="item-2">
-          Estágio
+          <Estagio />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Ameaça" key="item-3">
-          Ameaça
+          <Ameaca />
         </Tabs.TabPane>
       </Tabs>
+      <h2>Taxonomia</h2>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
       <BoxText>
         <span className="text">Quantidade de ocorrências por: </span>
         <Select
@@ -54,7 +69,10 @@ export function Home() {
       {occByType === 'Classe' ? (
         <Classe />
       ) : occByType === 'Ordem' ? (
-        <Ordem />
+        <>
+          <Ordem />
+          <HorizontalGroupBar />
+        </>
       ) : occByType === 'Subordem' ? (
         <Subordem />
       ) : (

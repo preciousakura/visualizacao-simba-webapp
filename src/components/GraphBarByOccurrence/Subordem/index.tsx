@@ -1,12 +1,8 @@
 import { HorizontalBar } from '../..';
-import { useData } from '../../../hooks/useData';
 
 export function Subordem() {
-  const { data } = useData();
-
   return (
     <HorizontalBar
-      data={data}
       y={{
         field: 'subordem',
         type: 'nominal',

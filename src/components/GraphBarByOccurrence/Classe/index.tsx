@@ -1,12 +1,8 @@
 import { HorizontalBar } from '../..';
-import { useData } from '../../../hooks/useData';
 
 export function Classe() {
-  const { data } = useData();
-
   return (
     <HorizontalBar
-      data={data}
       y={{
         field: 'classe',
         type: 'nominal',

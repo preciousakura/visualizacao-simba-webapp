@@ -7,7 +7,8 @@ export const Box = styled.div`
 
   .vega-embed.has-actions {
     width: 100%;
-    svg.marks {
+    svg.marks,
+    canvas.marks {
       width: 100%;
       height: auto;
     }

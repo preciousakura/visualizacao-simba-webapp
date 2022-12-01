@@ -1,9 +1,14 @@
 import { Box } from './styles';
+import logo from '../../assets/logo.png';
 
 export function Header() {
   return (
     <Box>
-      <h2>Seja Bem-Vindo!</h2>
+      <div className="header-title">
+        <h2>Seja Bem-Vindo!</h2>
+        <img src={logo} />
+      </div>
+
       <p className="tag-data">Última atualização: 05/12/2022</p>
       <div className="box-intro">
         <div className="text">

@@ -1,12 +1,8 @@
 import { HorizontalBar } from '../..';
-import { useData } from '../../../hooks/useData';
 
 export function Ordem() {
-  const { data } = useData();
-
   return (
     <HorizontalBar
-      data={data}
       y={{
         field: 'ordem',
         type: 'nominal',
