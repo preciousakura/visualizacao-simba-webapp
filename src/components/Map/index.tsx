@@ -1,4 +1,4 @@
-import { PlainObject, VegaLite, VisualizationSpec } from 'react-vega';
+import { Vega, VisualizationSpec } from 'react-vega';
 import { useBoxWidth } from '../../hooks/useBoxWidth';
 import { useData } from '../../hooks/useData';
 
@@ -17,8 +17,8 @@ export function Map({}: MapProps) {
     signals: [
       {
         name: 'scale',
-        value: 15900,
-        bind: { input: 'range', min: 11400, max: 20600 }
+        value: 20600,
+        bind: { input: 'range', min: 20600, max: 40000 }
       },
       {
         name: 'translateX',
@@ -27,35 +27,8 @@ export function Map({}: MapProps) {
       },
       {
         name: 'translateY',
-        value: 260,
+        value: 10,
         bind: { input: 'range', min: -300, max: 180 }
-      },
-      {
-        name: 'shape',
-        value: 'line',
-        bind: { input: 'radio', options: ['line', 'curve'] }
-      },
-      {
-        name: 'hover',
-        value: null,
-        on: [
-          { events: '@cell:mouseover', update: 'datum' },
-          { events: '@cell:mouseout', update: 'null' }
-        ]
-      },
-      {
-        name: 'title',
-        value: 'Rio de Janeiro',
-        update:
-          "hover ? hover.name + ' (' + hover.iata + ')' : 'Rio de Janeiro'"
-      },
-      {
-        name: 'cell_stroke',
-        value: null,
-        on: [
-          { events: 'dblclick', update: "cell_stroke ? null : 'brown'" },
-          { events: 'mousedown!', update: 'cell_stroke' }
-        ]
       }
     ],
 
@@ -72,16 +45,36 @@ export function Map({}: MapProps) {
         ]
       },
       {
-        name: 'table'
-        // transform: [
-        //   {
-        //     type: 'aggregate',
-        //     groupby: ['origin'],
-        //     fields: ['count'],
-        //     ops: ['sum'],
-        //     as: ['flights']
-        //   }
-        // ]
+        name: 'table',
+        transform: [
+          {
+            type: 'aggregate',
+            ops: ['count'],
+            fields: ['municipio'],
+            as: ['Qtde'],
+            groupby: ['municipio', 'longitude', 'latitude']
+          },
+          {
+            type: 'geopoint',
+            projection: 'projection',
+            fields: ['longitude', 'latitude']
+          },
+          {
+            type: 'collect',
+            sort: {
+              field: 'Qtde',
+              order: 'descending'
+            }
+          }
+        ]
+      }
+    ],
+    legends: [
+      {
+        title: 'Ocorrências',
+        orient: 'bottom-right',
+        type: 'symbol',
+        size: 'size'
       }
     ],
 
@@ -99,7 +92,8 @@ export function Map({}: MapProps) {
       {
         name: 'size',
         type: 'linear',
-        range: [16, 1000]
+        domain: { data: 'table', field: 'Qtde' },
+        range: [500, 2000]
       }
     ],
 
@@ -118,35 +112,21 @@ export function Map({}: MapProps) {
         }
       },
       {
+        name: 'circles',
         type: 'symbol',
         from: { data: 'table' },
         encode: {
           enter: {
-            size: { scale: 'size', field: 'municipio' },
+            size: { scale: 'size', field: 'Qtde' },
             fill: { value: 'steelblue' },
             fillOpacity: { value: 0.8 },
             stroke: { value: 'white' },
-            strokeWidth: { value: 1.5 }
+            strokeWidth: { value: 1.5 },
+            tooltip: [{ signal: "'Município: ' + datum.municipio" }]
           },
           update: {
             x: { field: 'x' },
             y: { field: 'y' }
-          }
-        }
-      },
-      {
-        type: 'text',
-        interactive: false,
-        encode: {
-          enter: {
-            x: { value: 895 },
-            y: { value: 0 },
-            fill: { value: 'black' },
-            fontSize: { value: 20 },
-            align: { value: 'right' }
-          },
-          update: {
-            text: { signal: 'title' }
           }
         }
       }
@@ -154,7 +134,7 @@ export function Map({}: MapProps) {
   };
   return (
     <div ref={boxRef}>
-      <VegaLite data={data} spec={spec} />
+      <Vega data={data} spec={spec} />
     </div>
   );
 }

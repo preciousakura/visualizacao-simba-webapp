@@ -24,6 +24,8 @@ export function Home() {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.
       </p>
+      <Map />
+
       <Tabs>
         <Tabs.TabPane tab="Condição" key="item-1">
           <Condicao />
@@ -64,7 +66,6 @@ export function Home() {
           </Option>
         </Select>
       </BoxText>
-      <Map />
 
       {occByType === 'Classe' ? (
         <Classe />
