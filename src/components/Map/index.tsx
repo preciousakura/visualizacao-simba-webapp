@@ -7,23 +7,27 @@ interface MapProps {
 
 export function Map({ data }: MapProps) {
   const { boxRef, width } = useBoxWidth<HTMLDivElement>();
-  console.log(data);
 
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     width: width,
-    height: 300,
+    height: 1000,
+    autosize: {
+      type: 'fit',
+      contains: 'padding'
+    },
     layer: [
       {
         data: {
-          url: 'counties',
+          url: 'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/rj_topojson.json',
           format: {
             type: 'topojson',
             feature: 'rio_jn'
           }
         },
         projection: {
-          type: 'mercator'
+          type: 'mercator',
+          center: [0, 0]
         },
         mark: {
           type: 'geoshape',
@@ -35,21 +39,44 @@ export function Map({ data }: MapProps) {
         data: {
           name: 'table'
         },
+        // transform: [
+        //   {
+        //     aggregate: [
+        //       {
+        //         op: 'count',
+        //         field: 'municipio',
+        //         as: 'city'
+        //       }
+        //     ],
+        //     groupby: ['cidade']
+        //   }
+        // ],
         projection: {
-          type: 'mercator'
+          type: 'mercator',
+          center: [0, 0]
         },
         mark: 'circle',
         encoding: {
+          // size: {
+          //   field: 'city',
+          //   type: 'quantitative',
+          //   scale: { domain: [0, 1000], range: [100, 500] }
+          // },
+          size: { value: 150 },
           longitude: {
-            field: 'longitude',
-            type: 'quantitative'
+            field: 'longitude'
           },
           latitude: {
-            field: 'latitude',
-            type: 'quantitative'
+            field: 'latitude'
           },
-          size: { value: 10 },
-          color: { value: 'steelblue' }
+          color: { value: 'steelblue' },
+
+          tooltip: [
+            {
+              field: 'municipio',
+              type: 'nominal'
+            }
+          ]
         }
       }
     ]

@@ -1,10 +1,17 @@
-import { Tabs } from 'antd';
-import { Filter, Header, HorizontalBar, Map } from '../../components';
-import { Box } from './styles';
-import { useData } from '../../hooks/useData';
+import { Select, Tabs } from 'antd';
+import { useState } from 'react';
+import { Filter, Header, Map } from '../../components';
+import {
+  Classe,
+  Familia,
+  Ordem,
+  Subordem
+} from '../../components/GraphByOccurrence';
+const { Option } = Select;
+import { Box, BoxText } from './styles';
 
 export function Home() {
-  const { data } = useData();
+  const [occByType, setOccByType] = useState('Classe');
   return (
     <Box>
       <Header />
@@ -20,28 +27,39 @@ export function Home() {
           Ameaça
         </Tabs.TabPane>
       </Tabs>
+      <BoxText>
+        <span className="text">Quantidade de ocorrências por: </span>
+        <Select
+          showSearch
+          placeholder="Selecione uma opção"
+          onChange={(e) => setOccByType(e)}
+          value={!!occByType ? occByType : undefined}
+        >
+          <Option key="Classe" value="Classe">
+            Classe
+          </Option>
+          <Option key="Ordem" value="Ordem">
+            Ordem
+          </Option>
+          <Option key="Subordem" value="Subordem">
+            Subordem
+          </Option>
+          <Option key="Família" value="Família">
+            Família
+          </Option>
+        </Select>
+      </BoxText>
+      {/* <Map data={data} /> */}
 
-      <HorizontalBar
-        data={data}
-        y={{
-          field: 'classe',
-          type: 'nominal',
-          title: 'Classe',
-          sort: '-x'
-        }}
-        x={{
-          aggregate: 'count',
-          field: 'id',
-          type: 'quantitative',
-          title: 'Ocorrências'
-        }}
-        title={''}
-        tooltip={[
-          { field: 'classe', title: 'Classe' },
-          { aggregate: 'count', field: 'Classe', title: 'Ocorrências' }
-        ]}
-      />
-      <Map data={data} />
+      {occByType === 'Classe' ? (
+        <Classe />
+      ) : occByType === 'Ordem' ? (
+        <Ordem />
+      ) : occByType === 'Subordem' ? (
+        <Subordem />
+      ) : (
+        <Familia />
+      )}
     </Box>
   );
 }

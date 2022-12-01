@@ -8,13 +8,13 @@ import {
 import { Data } from 'simba';
 import * as d3 from 'd3';
 import { useFilter } from './useFilter';
-import rjTopoJson from '../data/rj_topojson.json';
+
 interface DataContextProviderProps {
   children: ReactNode;
 }
 
 interface DataContextDataProps {
-  data: { table: Data[]; counties?: any };
+  data: { table: Data[] };
 }
 
 export const DataContext = createContext({} as DataContextDataProps);
@@ -36,23 +36,39 @@ export function DataProvider({ children }: DataContextProviderProps) {
         .then((res) => {
           const dataFormatted: Data[] = res.map((d, i) => {
             const df = d['Data/Hora']?.split(' ')[0];
+            const lat = Number(d['Ponto - Lat']?.replaceAll(',', '.'));
+            const long = Number(d['Ponto - Long']?.replaceAll(',', '.'));
             return {
               condicao: d['Condição'] as string,
               data: df,
               estagio: d['Estágio de desenvolvimento'] as string,
               ameacada: d['Espécie ameaçada'] as string,
-              classe: d['OFAI - Classe do indivíduo'] as string,
-              ordem: d['OFAI - Ordem do indivíduo'] as string,
-              subordem: d['OFAI - Subordem do indivíduo'] as string,
-              familia: d['OFAI - Família do indivíduo'] as string,
+              classe:
+                d['OFAI - Classe do indivíduo'] === ''
+                  ? 'Não informado'
+                  : (d['OFAI - Classe do indivíduo'] as string),
+              ordem:
+                d['OFAI - Ordem do indivíduo'] === ''
+                  ? 'Não informado'
+                  : (d['OFAI - Ordem do indivíduo'] as string),
+              subordem:
+                d['OFAI - Subordem do indivíduo'] === ''
+                  ? 'Não informado'
+                  : d['OFAI - Subordem do indivíduo'] === ''
+                  ? 'Não informado'
+                  : (d['OFAI - Subordem do indivíduo'] as string),
+              familia:
+                d['OFAI - Família do indivíduo'] === ''
+                  ? 'Não informado'
+                  : (d['OFAI - Família do indivíduo'] as string),
               genero: d['OFAI - Sexo'] as string,
               municipio: d['Cidade'] as string,
               id: d['Identificador da ocorrência'] as string,
-              latitude: Number(d['Ponto - Lat']?.replaceAll(',', '.')),
-              longitude: Number(d['Ponto - Long']?.replaceAll(',', '.'))
+              latitude: lat < 0 ? lat : -lat,
+              longitude: long < 0 ? long : -long
             };
           });
-          const d = { table: dataFormatted, counties: rjTopoJson };
+          const d = { table: dataFormatted };
           setData(d);
           setFilterData(d);
         });

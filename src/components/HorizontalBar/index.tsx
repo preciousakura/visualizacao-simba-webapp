@@ -21,15 +21,26 @@ export function HorizontalBar({
 
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+
     width: width,
-    height: 300,
+    height: 400,
     mark: 'bar',
     encoding: {
-      x: x,
-      y: y,
+      x: {
+        ...x,
+        axis: {
+          labelFontSize: 16
+        }
+      },
+      y: {
+        ...y,
+        axis: {
+          labelFontSize: 16
+        }
+      },
       tooltip: tooltip
     },
-    title: title,
+    title: { text: title, fontSize: 16 },
     usermeta: { embedOptions: { renderer: 'svg' } },
     data: { name: 'table' }
   };

@@ -9,10 +9,6 @@ export const Box = styled.div`
 
   width: 100%;
 
-  .ant-select {
-    width: 210px;
-  }
-
   button.clear-filter {
     justify-self: flex-start;
     outline: none;
