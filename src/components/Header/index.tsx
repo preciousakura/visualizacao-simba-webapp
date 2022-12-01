@@ -1,12 +1,11 @@
 import { Box } from './styles';
-import logo from '../../assets/logo.png';
 
 export function Header() {
   return (
     <Box>
       <div className="header-title">
         <h2>Seja Bem-Vindo!</h2>
-        <img src={logo} />
+        <img src="https://simba.petrobras.com.br/simba/web/marca.png" />
       </div>
 
       <p className="tag-data">Última atualização: 05/12/2022</p>
