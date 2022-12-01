@@ -1,6 +1,7 @@
 import { Select, Tabs } from 'antd';
 import { useState } from 'react';
 import { Filter, Header, HorizontalGroupBar } from '../../components';
+import { ForceGraph } from '../../components/ForceGraph';
 import {
   Classe,
   Familia,
@@ -78,6 +79,8 @@ export function Home() {
       ) : (
         <Familia />
       )}
+
+      <ForceGraph />
     </Box>
   );
 }
