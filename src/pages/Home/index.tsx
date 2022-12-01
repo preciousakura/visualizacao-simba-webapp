@@ -1,6 +1,6 @@
 import { Select, Tabs } from 'antd';
 import { useState } from 'react';
-import { Filter, Header, HorizontalGroupBar } from '../../components';
+import { Filter, Header, HorizontalGroupBar, Map } from '../../components';
 import {
   Classe,
   Familia,
@@ -64,7 +64,7 @@ export function Home() {
           </Option>
         </Select>
       </BoxText>
-      {/* <Map data={data} /> */}
+      <Map />
 
       {occByType === 'Classe' ? (
         <Classe />
