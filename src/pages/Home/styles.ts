@@ -9,8 +9,8 @@ export const Box = styled.div`
     width: 100%;
     svg.marks,
     canvas.marks {
-      width: 100%;
-      height: auto;
+      width: 100% !important;
+      height: auto !important;
     }
   }
 

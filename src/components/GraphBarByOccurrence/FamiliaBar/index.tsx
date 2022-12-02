@@ -1,13 +1,13 @@
 import { HorizontalBar } from '../..';
 
-export function OrdemBar() {
+export function FamiliaBar() {
   return (
     <HorizontalBar
       y={{
-        field: 'ordem',
+        field: 'familia',
         type: 'nominal',
-        sort: '-x',
-        title: null
+        title: null,
+        sort: '-x'
       }}
       x={{
         aggregate: 'count',
@@ -15,10 +15,10 @@ export function OrdemBar() {
         type: 'quantitative',
         title: null
       }}
-      title={'Quantidade de ocorrência por ordem'}
+      title={'Quantidade de ocorrência por família'}
       tooltip={[
-        { field: 'ordem', title: 'Ordem' },
-        { aggregate: 'count', field: 'ordem', title: 'Ocorrências' }
+        { field: 'familia', title: 'Família' },
+        { aggregate: 'count', field: 'familia', title: 'Ocorrências' }
       ]}
     />
   );

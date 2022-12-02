@@ -50,7 +50,7 @@ export function Map({}: MapProps) {
           {
             type: 'aggregate',
             ops: ['count'],
-            fields: ['municipio'],
+            fields: ['id'],
             as: ['Qtde'],
             groupby: ['municipio', 'longitude', 'latitude']
           },
@@ -92,8 +92,8 @@ export function Map({}: MapProps) {
       {
         name: 'size',
         type: 'linear',
-        domain: { data: 'table', field: 'Qtde' },
-        range: [500, 2000]
+        domain: [0, 1200],
+        range: [100, 2000]
       }
     ],
 
@@ -117,12 +117,11 @@ export function Map({}: MapProps) {
         from: { data: 'table' },
         encode: {
           enter: {
+            tooltip: [{ signal: 'datum' }],
             size: { scale: 'size', field: 'Qtde' },
             fill: { value: 'steelblue' },
             fillOpacity: { value: 0.8 },
-            stroke: { value: 'white' },
-            strokeWidth: { value: 1.5 },
-            tooltip: [{ signal: "'Município: ' + datum.municipio" }]
+            stroke: { value: 'white' }
           },
           update: {
             x: { field: 'x' },

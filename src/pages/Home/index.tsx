@@ -2,21 +2,33 @@ import { Select, Tabs } from 'antd';
 import { useState } from 'react';
 import { Filter, Header, HorizontalGroupBar, Map } from '../../components';
 import {
-  Classe,
-  Familia,
-  Ordem,
-  Subordem
+  ClasseBar,
+  EspecieBar,
+  FamiliaBar,
+  OrdemBar,
+  SubordemBar
 } from '../../components/GraphBarByOccurrence';
-import { Ameaca, Condicao, Estagio } from '../../components/GraphPieByProfile';
+import {
+  AmeacaLine,
+  CondicaoLine,
+  EstagioLine
+} from '../../components/GraphLineByProfile';
+import {
+  AmeacaPie,
+  CondicaoPie,
+  EstagioPie
+} from '../../components/GraphPieByProfile';
 const { Option } = Select;
-import { Box, BoxText } from './styles';
+import { Box, BoxColumn, BoxText } from './styles';
 
 export function Home() {
-  const [occByType, setOccByType] = useState('Classe');
+  const [occByType, setOccByType] = useState('Bar');
   return (
     <Box>
       <Header />
       <Filter />
+      <h2>Ocorrências por município</h2>
+      <Map />
       <h2>Perfil</h2>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -24,17 +36,18 @@ export function Home() {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.
       </p>
-      <Map />
-
       <Tabs>
         <Tabs.TabPane tab="Condição" key="item-1">
-          <Condicao />
+          <CondicaoLine />
+          <CondicaoPie />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Estágio" key="item-2">
-          <Estagio />
+          <EstagioLine />
+          <EstagioPie />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Ameaça" key="item-3">
-          <Ameaca />
+          <AmeacaLine />
+          <AmeacaPie />
         </Tabs.TabPane>
       </Tabs>
       <h2>Taxonomia</h2>
@@ -64,20 +77,25 @@ export function Home() {
           <Option key="Família" value="Família">
             Família
           </Option>
+          <Option key="Espécie" value="Espécie">
+            Espécie
+          </Option>
         </Select>
       </BoxText>
 
       {occByType === 'Classe' ? (
-        <Classe />
+        <ClasseBar />
       ) : occByType === 'Ordem' ? (
         <>
-          <Ordem />
+          <OrdemBar />
           <HorizontalGroupBar />
         </>
       ) : occByType === 'Subordem' ? (
-        <Subordem />
+        <SubordemBar />
+      ) : occByType === 'Espécie' ? (
+        <EspecieBar />
       ) : (
-        <Familia />
+        <FamiliaBar />
       )}
     </Box>
   );

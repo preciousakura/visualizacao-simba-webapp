@@ -7,9 +7,16 @@ interface HorizontalBarProps {
   y: any;
   title: string;
   tooltip?: any;
+  height?: number;
 }
 
-export function HorizontalBar({ x, y, title, tooltip }: HorizontalBarProps) {
+export function HorizontalBar({
+  x,
+  y,
+  title,
+  tooltip,
+  height = 400
+}: HorizontalBarProps) {
   const { boxRef, width } = useBoxWidth<HTMLDivElement>();
   const { data } = useData();
 
@@ -18,7 +25,7 @@ export function HorizontalBar({ x, y, title, tooltip }: HorizontalBarProps) {
 
     width: width,
     background: '#F6F6F6',
-    height: 400,
+    height: height,
     mark: 'bar',
     encoding: {
       x: {

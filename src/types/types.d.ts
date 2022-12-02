@@ -6,6 +6,7 @@ declare module 'simba' {
     ameacada: string;
     classe: string;
     ordem: string;
+    especie: string;
     subordem: string;
     familia: string;
     genero: string;

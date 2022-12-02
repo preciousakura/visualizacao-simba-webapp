@@ -3,11 +3,14 @@ import {
   ReactNode,
   useContext,
   useEffect,
+  useMemo,
   useState
 } from 'react';
 import { Data } from 'simba';
 import * as d3 from 'd3';
 import { useFilter } from './useFilter';
+import * as turf from '@turf/turf';
+import rjGson from '../data/rj_geojson.json';
 
 interface DataContextProviderProps {
   children: ReactNode;
@@ -27,6 +30,17 @@ export function DataProvider({ children }: DataContextProviderProps) {
 
   const { city, condicao, ameaca, estagio } = useFilter();
 
+  const center_cities: Record<string, { latitude: number; longitude: number }> =
+    useMemo(() => {
+      return rjGson.features.reduce((acc, cur) => {
+        const center = turf.center(cur.geometry).geometry.coordinates;
+        return {
+          ...acc,
+          [cur.properties.name]: { latitude: center[1], longitude: center[0] }
+        };
+      }, {});
+    }, []);
+
   useEffect(() => {
     const res = async () => {
       await d3
@@ -35,9 +49,10 @@ export function DataProvider({ children }: DataContextProviderProps) {
         )
         .then((res) => {
           const dataFormatted: Data[] = res.map((d, i) => {
-            const df = d['Data/Hora']?.split(' ')[0];
-            const lat = Number(d['Ponto - Lat']?.replaceAll(',', '.'));
-            const long = Number(d['Ponto - Long']?.replaceAll(',', '.'));
+            const df = d['Data/Hora']?.split(' ')[0].split('/')[2];
+            const c = d['Cidade'] as string;
+            const lat = center_cities[c] ? center_cities[c].latitude : 0;
+            const long = center_cities[c] ? center_cities[c].longitude : 0;
             return {
               condicao: d['Condição'] as string,
               data: df,
@@ -54,6 +69,10 @@ export function DataProvider({ children }: DataContextProviderProps) {
                 d['OFAI - Ordem do indivíduo'] === ''
                   ? 'Não informado'
                   : (d['OFAI - Ordem do indivíduo'] as string),
+              especie:
+                d['OFAI - Espécie do indivíduo'] === ''
+                  ? 'Não informado'
+                  : (d['OFAI - Espécie do indivíduo'] as string),
               subordem:
                 d['OFAI - Subordem do indivíduo'] === ''
                   ? 'Não informado'
@@ -67,8 +86,8 @@ export function DataProvider({ children }: DataContextProviderProps) {
               genero: d['OFAI - Sexo'] as string,
               municipio: d['Cidade'] as string,
               id: d['Identificador da ocorrência'] as string,
-              latitude: lat < 0 ? lat : -lat,
-              longitude: long < 0 ? long : -long
+              latitude: lat,
+              longitude: long
             };
           });
           const d = { table: dataFormatted };
@@ -78,6 +97,7 @@ export function DataProvider({ children }: DataContextProviderProps) {
     };
     res();
   }, []);
+  console.log(data);
 
   useEffect(() => {
     const d = filterData.table.filter(
@@ -90,7 +110,6 @@ export function DataProvider({ children }: DataContextProviderProps) {
         (estagio ? d.estagio.toLowerCase() === estagio?.toLowerCase() : true)
     );
     setData({ table: d });
-    console.log(d);
   }, [city, condicao, ameaca, estagio]);
 
   return (

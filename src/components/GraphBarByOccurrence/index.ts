@@ -1,4 +1,5 @@
-export { Familia } from './Familia';
-export { Ordem } from './Ordem';
-export { Subordem } from './Subordem';
-export { Classe } from './Classe';
+export { FamiliaBar } from './FamiliaBar';
+export { OrdemBar } from './OrdemBar';
+export { SubordemBar } from './SubordemBar';
+export { ClasseBar } from './ClasseBar';
+export { EspecieBar } from './EspecieBar';

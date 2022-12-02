@@ -1,6 +1,6 @@
 import { PieChart } from '../..';
 
-export function Condicao() {
+export function EstagioPie() {
   return (
     <PieChart
       aggregate={{
@@ -11,7 +11,7 @@ export function Condicao() {
             as: 'Qtde'
           }
         ],
-        groupby: ['condicao']
+        groupby: ['estagio']
       }}
       window={{
         window: [
@@ -28,10 +28,10 @@ export function Condicao() {
         as: 'Porcentagem'
       }}
       color={{
-        field: 'condicao',
+        field: 'estagio',
         type: 'nominal',
         legend: {
-          title: 'Condição',
+          title: 'Estágio',
           direction: 'vertical',
           orient: 'none',
           legendX: 285,
@@ -39,7 +39,7 @@ export function Condicao() {
         }
       }}
       tooltip={[
-        { field: 'condicao', type: 'nominal' },
+        { field: 'estagio', type: 'nominal' },
         { field: 'Porcentagem', type: 'quantitative', format: '.2%' },
         { field: 'Qtde', title: 'Quantidade', type: 'quantitative' }
       ]}

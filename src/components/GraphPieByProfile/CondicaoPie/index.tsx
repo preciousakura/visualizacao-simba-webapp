@@ -1,6 +1,6 @@
 import { PieChart } from '../..';
 
-export function Ameaca() {
+export function CondicaoPie() {
   return (
     <PieChart
       aggregate={{
@@ -11,7 +11,7 @@ export function Ameaca() {
             as: 'Qtde'
           }
         ],
-        groupby: ['ameacada']
+        groupby: ['condicao']
       }}
       window={{
         window: [
@@ -28,10 +28,10 @@ export function Ameaca() {
         as: 'Porcentagem'
       }}
       color={{
-        field: 'ameacada',
+        field: 'condicao',
         type: 'nominal',
         legend: {
-          title: 'Espécie Ameaçada',
+          title: 'Condição',
           direction: 'vertical',
           orient: 'none',
           legendX: 285,
@@ -39,7 +39,7 @@ export function Ameaca() {
         }
       }}
       tooltip={[
-        { field: 'ameacada', type: 'nominal' },
+        { field: 'condicao', type: 'nominal' },
         { field: 'Porcentagem', type: 'quantitative', format: '.2%' },
         { field: 'Qtde', title: 'Quantidade', type: 'quantitative' }
       ]}

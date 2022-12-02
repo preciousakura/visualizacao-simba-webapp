@@ -1,6 +1,6 @@
 import { HorizontalBar } from '../..';
 
-export function Subordem() {
+export function SubordemBar() {
   return (
     <HorizontalBar
       y={{
