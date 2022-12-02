@@ -97,7 +97,6 @@ export function DataProvider({ children }: DataContextProviderProps) {
     };
     res();
   }, []);
-  console.log(data);
 
   useEffect(() => {
     const d = filterData.table.filter(
