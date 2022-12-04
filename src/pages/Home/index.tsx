@@ -5,18 +5,21 @@ import {
   ClasseBar,
   EspecieBar,
   FamiliaBar,
+  GeneroBar,
   OrdemBar,
   SubordemBar
 } from '../../components/GraphBarByOccurrence';
 import {
   AmeacaLine,
   CondicaoLine,
-  EstagioLine
+  EstagioLine,
+  SexoLine
 } from '../../components/GraphLineByProfile';
 import {
   AmeacaPie,
   CondicaoPie,
-  EstagioPie
+  EstagioPie,
+  SexoPie
 } from '../../components/GraphPieByProfile';
 const { Option } = Select;
 import { Box, BoxColumn, BoxText } from './styles';
@@ -49,6 +52,10 @@ export function Home() {
           <AmeacaPie />
           <AmeacaLine />
         </Tabs.TabPane>
+        <Tabs.TabPane tab="Sexo" key="item-4">
+          <SexoPie />
+          <SexoLine />
+        </Tabs.TabPane>
       </Tabs>
       <h2>Taxonomia</h2>
       <p>
@@ -80,6 +87,9 @@ export function Home() {
           <Option key="Espécie" value="Espécie">
             Espécie
           </Option>
+          <Option key="Gênero" value="Gênero">
+            Gênero
+          </Option>
         </Select>
       </BoxText>
 
@@ -93,6 +103,8 @@ export function Home() {
         <SubordemBar />
       ) : occByType === 'Espécie' ? (
         <EspecieBar />
+      ) : occByType === 'Gênero' ? (
+        <GeneroBar />
       ) : (
         <FamiliaBar />
       )}

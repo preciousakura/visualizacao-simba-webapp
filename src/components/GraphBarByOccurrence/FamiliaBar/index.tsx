@@ -3,6 +3,7 @@ import { HorizontalBar } from '../..';
 export function FamiliaBar() {
   return (
     <HorizontalBar
+      height={700}
       y={{
         field: 'familia',
         type: 'nominal',

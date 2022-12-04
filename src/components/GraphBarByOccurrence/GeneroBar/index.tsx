@@ -1,11 +1,11 @@
 import { HorizontalBar } from '../..';
 
-export function EspecieBar() {
+export function GeneroBar() {
   return (
     <HorizontalBar
       height={1200}
       y={{
-        field: 'especie',
+        field: 'genero',
         type: 'nominal',
         title: null,
         sort: '-x'
@@ -16,10 +16,10 @@ export function EspecieBar() {
         type: 'quantitative',
         title: null
       }}
-      title={'Quantidade de ocorrência por espécie'}
+      title={'Quantidade de ocorrência por gênero'}
       tooltip={[
-        { field: 'especie', title: 'Espécie' },
-        { aggregate: 'count', field: 'especie', title: 'Ocorrências' }
+        { field: 'genero', title: 'Gênero' },
+        { aggregate: 'count', field: 'genero', title: 'Ocorrências' }
       ]}
     />
   );

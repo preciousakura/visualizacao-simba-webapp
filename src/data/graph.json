@@ -1,0 +1,586 @@
+{
+  "nodes": [
+    {
+      "id": "Reptilia",
+      "group": "Classe"
+    },
+    {
+      "id": "Aves",
+      "group": "Classe"
+    },
+    {
+      "id": "Pontoporidae",
+      "group": "Família"
+    },
+    {
+      "id": "Mammalia",
+      "group": "Classe"
+    },
+    {
+      "id": "Cheloniidae",
+      "group": "Família"
+    },
+    {
+      "id": "Sulidae",
+      "group": "Família"
+    },
+    {
+      "id": "Delphinidae",
+      "group": "Família"
+    },
+    {
+      "id": "Phalacrocoracidae",
+      "group": "Família"
+    },
+    {
+      "id": "Fregatidae",
+      "group": "Família"
+    },
+    {
+      "id": "Ardeidae",
+      "group": "Família"
+    },
+    {
+      "id": "Laridae",
+      "group": "Família"
+    },
+    {
+      "id": "Spheniscidae",
+      "group": "Família"
+    },
+    {
+      "id": "Procellariidae",
+      "group": "Família"
+    },
+    {
+      "id": "Diomedeidae",
+      "group": "Família"
+    },
+    {
+      "id": "Dermochelyidae",
+      "group": "Família"
+    },
+    {
+      "id": "Balaenopteridae",
+      "group": "Família"
+    },
+    {
+      "id": "Iniidae",
+      "group": "Família"
+    },
+    {
+      "id": "Otariidae",
+      "group": "Família"
+    },
+    {
+      "id": "Hydrobatidae",
+      "group": "Família"
+    },
+    {
+      "id": "Mustelidae",
+      "group": "Família"
+    },
+    {
+      "id": "Rallidae",
+      "group": "Família"
+    },
+    {
+      "id": "Scolopacidae",
+      "group": "Família"
+    },
+    {
+      "id": "Charadriidae",
+      "group": "Família"
+    },
+    {
+      "id": "Phocidae",
+      "group": "Família"
+    },
+    {
+      "id": "Stercorariidae",
+      "group": "Família"
+    },
+    {
+      "id": "Chelonia mydas",
+      "group": "Espécie"
+    },
+    {
+      "id": "Sula leucogaster",
+      "group": "Espécie"
+    },
+    {
+      "id": "Sotalia guianensis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Phalacrocorax brasilianus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Fregata magnificens",
+      "group": "Espécie"
+    },
+    {
+      "id": "Caretta caretta",
+      "group": "Espécie"
+    },
+    {
+      "id": "Spheniscus magellanicus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Larus dominicanus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Nycticorax nycticorax",
+      "group": "Espécie"
+    },
+    {
+      "id": "Ardea alba",
+      "group": "Espécie"
+    },
+    {
+      "id": "Thalassarche chlororhynchos",
+      "group": "Espécie"
+    },
+    {
+      "id": "Puffinus puffinus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Lepidochelys olivacea",
+      "group": "Espécie"
+    },
+    {
+      "id": "Ardea cocoi",
+      "group": "Espécie"
+    },
+    {
+      "id": "Thalasseus acuflavidus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Steno bredanensis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Dermochelys coriacea",
+      "group": "Espécie"
+    },
+    {
+      "id": "Egretta thula",
+      "group": "Espécie"
+    },
+    {
+      "id": "Megaptera novaeangliae",
+      "group": "Espécie"
+    },
+    {
+      "id": "Tursiops truncatus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Pontoporia blainvillei",
+      "group": "Espécie"
+    },
+    {
+      "id": "Procellaria aequinoctialis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Calonectris diomedea borealis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Sterna hirundo",
+      "group": "Espécie"
+    },
+    {
+      "id": "Bubulcus ibis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Arctocephalus tropicalis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Eretmochelys imbricata",
+      "group": "Espécie"
+    },
+    {
+      "id": "Oceanitidae",
+      "group": "Família"
+    },
+    {
+      "id": "Thalassarche melanophris",
+      "group": "Espécie"
+    },
+    {
+      "id": "Stellena frontalis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Thalasseus maximus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Butorides striata",
+      "group": "Espécie"
+    },
+    {
+      "id": "Puffinus gravis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Egretta caerulea",
+      "group": "Espécie"
+    },
+    {
+      "id": "Oceanites oceanicus",
+      "group": "Espécie"
+    },
+    {
+      "id": "Lontra longicaudis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Calidris alba",
+      "group": "Espécie"
+    },
+    {
+      "id": "Nyctanassa violacea",
+      "group": "Espécie"
+    },
+    {
+      "id": "Delphinus delphis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Ixobrychus involucris",
+      "group": "Espécie"
+    },
+    {
+      "id": "Aramides saracura",
+      "group": "Espécie"
+    },
+    {
+      "id": "Pterodroma mollis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Lobodon carcinophaga",
+      "group": "Espécie"
+    },
+    {
+      "id": "Sterna hirundinacea",
+      "group": "Espécie"
+    },
+    {
+      "id": "Halobaena caerulea",
+      "group": "Espécie"
+    },
+    {
+      "id": "Arctocephalus australis",
+      "group": "Espécie"
+    },
+    {
+      "id": "Gallinula angulata",
+      "group": "Espécie"
+    },
+    {
+      "id": "Stenella longirostris",
+      "group": "Espécie"
+    },
+    {
+      "id": "Vanellus chilensis",
+      "group": "Espécie"
+    }
+  ],
+  "links": [
+    {
+      "source": "Cheloniidae",
+      "target": "Reptilia"
+    },
+    {
+      "source": "Sulidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Delphinidae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Phalacrocoracidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Fregatidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Oceanitidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Ardeidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Laridae",
+      "target": "Aves"
+    },
+    {
+      "source": "Spheniscidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Procellariidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Diomedeidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Dermochelyidae",
+      "target": "Reptilia"
+    },
+    {
+      "source": "Balaenopteridae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Iniidae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Otariidae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Pontoporidae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Hydrobatidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Mustelidae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Rallidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Scolopacidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Charadriidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Phocidae",
+      "target": "Mammalia"
+    },
+    {
+      "source": "Stercorariidae",
+      "target": "Aves"
+    },
+    {
+      "source": "Chelonia mydas",
+      "target": "Cheloniidae"
+    },
+    {
+      "source": "Sula leucogaster",
+      "target": "Sulidae"
+    },
+    {
+      "source": "Sotalia guianensis",
+      "target": "Delphinidae"
+    },
+    {
+      "source": "Phalacrocorax brasilianus",
+      "target": "Phalacrocoracidae"
+    },
+    {
+      "source": "Fregata magnificens",
+      "target": "Fregatidae"
+    },
+    {
+      "source": "Caretta caretta",
+      "target": "Cheloniidae"
+    },
+    {
+      "source": "Spheniscus magellanicus",
+      "target": "Spheniscidae"
+    },
+    {
+      "source": "Larus dominicanus",
+      "target": "Laridae"
+    },
+    {
+      "source": "Nycticorax nycticorax",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Ardea alba",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Thalassarche chlororhynchos",
+      "target": "Diomedeidae"
+    },
+    {
+      "source": "Puffinus puffinus",
+      "target": "Procellariidae"
+    },
+    {
+      "source": "Lepidochelys olivacea",
+      "target": "Cheloniidae"
+    },
+    {
+      "source": "Ardea cocoi",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Thalasseus acuflavidus",
+      "target": "Laridae"
+    },
+    {
+      "source": "Steno bredanensis",
+      "target": "Delphinidae"
+    },
+    {
+      "source": "Dermochelys coriacea",
+      "target": "Dermochelyidae"
+    },
+    {
+      "source": "Egretta thula",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Megaptera novaeangliae",
+      "target": "Balaenopteridae"
+    },
+    {
+      "source": "Tursiops truncatus",
+      "target": "Delphinidae"
+    },
+    {
+      "source": "Pontoporia blainvillei",
+      "target": "Pontoporidae"
+    },
+    {
+      "source": "Procellaria aequinoctialis",
+      "target": "Procellariidae"
+    },
+    {
+      "source": "Calonectris diomedea borealis",
+      "target": "Procellariidae"
+    },
+    {
+      "source": "Sterna hirundo",
+      "target": "Laridae"
+    },
+    {
+      "source": "Bubulcus ibis",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Arctocephalus tropicalis",
+      "target": "Otariidae"
+    },
+    {
+      "source": "Eretmochelys imbricata",
+      "target": "Cheloniidae"
+    },
+    {
+      "source": "Thalassarche melanophris",
+      "target": "Diomedeidae"
+    },
+    {
+      "source": "Stellena frontalis",
+      "target": "Delphinidae"
+    },
+    {
+      "source": "Thalasseus maximus",
+      "target": "Laridae"
+    },
+    {
+      "source": "Butorides striata",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Puffinus gravis",
+      "target": "Procellariidae"
+    },
+    {
+      "source": "Egretta caerulea",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Oceanites oceanicus",
+      "target": "Oceanitidae"
+    },
+    {
+      "source": "Lontra longicaudis",
+      "target": "Mustelidae"
+    },
+    {
+      "source": "Calidris alba",
+      "target": "Scolopacidae"
+    },
+    {
+      "source": "Nyctanassa violacea",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Delphinus delphis",
+      "target": "Delphinidae"
+    },
+    {
+      "source": "Ixobrychus involucris",
+      "target": "Ardeidae"
+    },
+    {
+      "source": "Aramides saracura",
+      "target": "Rallidae"
+    },
+    {
+      "source": "Pterodroma mollis",
+      "target": "Procellariidae"
+    },
+    {
+      "source": "Lobodon carcinophaga",
+      "target": "Phocidae"
+    },
+    {
+      "source": "Sterna hirundinacea",
+      "target": "Laridae"
+    },
+    {
+      "source": "Halobaena caerulea",
+      "target": "Procellariidae"
+    },
+    {
+      "source": "Arctocephalus australis",
+      "target": "Otariidae"
+    },
+    {
+      "source": "Gallinula angulata",
+      "target": "Rallidae"
+    },
+    {
+      "source": "Stenella longirostris",
+      "target": "Delphinidae"
+    },
+    {
+      "source": "Vanellus chilensis",
+      "target": "Charadriidae"
+    }
+  ]
+}

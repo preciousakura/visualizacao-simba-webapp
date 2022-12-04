@@ -28,7 +28,7 @@ export function DataProvider({ children }: DataContextProviderProps) {
     table: []
   });
 
-  const { city, condicao, ameaca, estagio } = useFilter();
+  const { city, condicao, ameaca, estagio, sexo } = useFilter();
 
   const center_cities: Record<string, { latitude: number; longitude: number }> =
     useMemo(() => {
@@ -61,29 +61,36 @@ export function DataProvider({ children }: DataContextProviderProps) {
                 d['Espécie ameaçada'] === ''
                   ? 'Não informado'
                   : (d['Espécie ameaçada'] as string),
+              sexo:
+                d['OFAI - Sexo'] === ''
+                  ? 'Não informado'
+                  : (d['OFAI - Sexo'] as string),
               classe:
-                d['OFAI - Classe do indivíduo'] === ''
+                d['Espécies - Classe'] === ''
                   ? 'Não informado'
-                  : (d['OFAI - Classe do indivíduo'] as string),
+                  : (d['Espécies - Classe'] as string),
               ordem:
-                d['OFAI - Ordem do indivíduo'] === ''
+                d['Espécies - Ordem'] === ''
                   ? 'Não informado'
-                  : (d['OFAI - Ordem do indivíduo'] as string),
+                  : (d['Espécies - Ordem'] as string),
               especie:
-                d['OFAI - Espécie do indivíduo'] === ''
+                d['Espécies - Espécie'] === ''
                   ? 'Não informado'
-                  : (d['OFAI - Espécie do indivíduo'] as string),
+                  : (d['Espécies - Espécie'] as string),
               subordem:
-                d['OFAI - Subordem do indivíduo'] === ''
+                d['Espécies - Subordem'] === ''
                   ? 'Não informado'
-                  : d['OFAI - Subordem do indivíduo'] === ''
+                  : d['Espécies - Subordem'] === ''
                   ? 'Não informado'
-                  : (d['OFAI - Subordem do indivíduo'] as string),
+                  : (d['Espécies - Subordem'] as string),
               familia:
-                d['OFAI - Família do indivíduo'] === ''
+                d['Espécies - Família'] === ''
                   ? 'Não informado'
-                  : (d['OFAI - Família do indivíduo'] as string),
-              genero: d['OFAI - Sexo'] as string,
+                  : (d['Espécies - Família'] as string),
+              genero:
+                d['Espécies - Gênero'] === ''
+                  ? 'Não informado'
+                  : (d['Espécies - Gênero'] as string),
               municipio: d['Cidade'] as string,
               id: d['Identificador da ocorrência'] as string,
               latitude: lat,
@@ -106,10 +113,13 @@ export function DataProvider({ children }: DataContextProviderProps) {
           ? d.condicao.toLowerCase() === condicao?.toLowerCase()
           : true) &&
         (ameaca ? d.ameacada.toLowerCase() === ameaca?.toLowerCase() : true) &&
+        (sexo ? d.sexo.toLowerCase() === sexo?.toLowerCase() : true) &&
         (estagio ? d.estagio.toLowerCase() === estagio?.toLowerCase() : true)
     );
     setData({ table: d });
-  }, [city, condicao, ameaca, estagio]);
+  }, [city, condicao, ameaca, estagio, sexo]);
+
+  console.log(data);
 
   return (
     <DataContext.Provider

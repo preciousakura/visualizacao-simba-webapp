@@ -9,6 +9,8 @@ interface FilterContextDataProps {
   ameaca?: string;
   condicao?: string;
   estagio?: string;
+  sexo?: string;
+  onChangeSexo: (s: string) => void;
   onChangeCity: (s: string) => void;
   onChangeAmeaca: (s: string) => void;
   onChangeCondicao: (s: string) => void;
@@ -23,6 +25,11 @@ export function FilterProvider({ children }: FilterContextProviderProps) {
   const [ameaca, setAmeaca] = useState<string>();
   const [condicao, setCondicao] = useState<string>();
   const [estagio, setEstagio] = useState<string>();
+  const [sexo, setSexo] = useState<string>();
+
+  const onChangeSexo = (sexo?: string) => {
+    setSexo(sexo);
+  };
 
   const onChangeCity = (city?: string) => {
     setCity(city);
@@ -45,6 +52,7 @@ export function FilterProvider({ children }: FilterContextProviderProps) {
     setAmeaca(undefined);
     setCondicao(undefined);
     setEstagio(undefined);
+    setSexo(undefined);
   };
 
   return (
@@ -54,6 +62,8 @@ export function FilterProvider({ children }: FilterContextProviderProps) {
         ameaca,
         condicao,
         estagio,
+        sexo,
+        onChangeSexo,
         onChangeCity,
         onChangeAmeaca,
         onChangeCondicao,

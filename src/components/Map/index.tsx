@@ -23,12 +23,12 @@ export function Map({}: MapProps) {
       {
         name: 'translateX',
         value: 760,
-        bind: { input: 'range', min: 0, max: 1000 }
+        bind: { input: 'range', min: 0, max: 2000 }
       },
       {
         name: 'translateY',
         value: 10,
-        bind: { input: 'range', min: -300, max: 180 }
+        bind: { input: 'range', min: -400, max: 180 }
       }
     ],
 

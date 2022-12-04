@@ -11,6 +11,8 @@ export function Filter() {
     condicao,
     ameaca,
     estagio,
+    sexo,
+    onChangeSexo,
     onChangeCity,
     onChangeAmeaca,
     onChangeCondicao,
@@ -83,6 +85,25 @@ export function Filter() {
           Vivo
         </Option>
       </Select>
+
+      <Select
+        showSearch
+        allowClear
+        placeholder="Selecione um sexo"
+        onChange={onChangeSexo}
+        value={!!sexo ? sexo : undefined}
+      >
+        <Option key="macho" value="Macho">
+          Macho
+        </Option>
+        <Option key="femea" value="Fêmea">
+          Fêmea
+        </Option>
+        <Option key="indefinido" value="Indefinido">
+          Indefinido
+        </Option>
+      </Select>
+
       <button onClick={erased} className="clear-filter">
         <BiTrash size={15} />
         <span>LIMPAR</span>

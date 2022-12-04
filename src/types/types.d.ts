@@ -9,6 +9,7 @@ declare module 'simba' {
     especie: string;
     subordem: string;
     familia: string;
+    sexo: string;
     genero: string;
     municipio: string;
     id: string;
