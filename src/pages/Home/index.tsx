@@ -38,16 +38,16 @@ export function Home() {
       </p>
       <Tabs>
         <Tabs.TabPane tab="Condição" key="item-1">
-          <CondicaoLine />
           <CondicaoPie />
+          <CondicaoLine />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Estágio" key="item-2">
-          <EstagioLine />
           <EstagioPie />
+          <EstagioLine />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Ameaça" key="item-3">
-          <AmeacaLine />
           <AmeacaPie />
+          <AmeacaLine />
         </Tabs.TabPane>
       </Tabs>
       <h2>Taxonomia</h2>
@@ -88,7 +88,6 @@ export function Home() {
       ) : occByType === 'Ordem' ? (
         <>
           <OrdemBar />
-          <HorizontalGroupBar />
         </>
       ) : occByType === 'Subordem' ? (
         <SubordemBar />

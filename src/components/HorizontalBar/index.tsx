@@ -40,6 +40,7 @@ export function HorizontalBar({
           labelFontSize: 16
         }
       },
+      color: { value: '#0B5890' },
       tooltip: tooltip
     },
     title: { text: title, fontSize: 16 },

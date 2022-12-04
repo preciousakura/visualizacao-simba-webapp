@@ -116,14 +116,15 @@ export function Map({}: MapProps) {
         type: 'symbol',
         from: { data: 'table' },
         encode: {
-          enter: {
-            tooltip: [{ signal: 'datum' }],
-            size: { scale: 'size', field: 'Qtde' },
-            fill: { value: 'steelblue' },
-            fillOpacity: { value: 0.8 },
-            stroke: { value: 'white' }
-          },
           update: {
+            tooltip: [{ field: 'municipio' }],
+            size: {
+              scale: 'size',
+              field: 'Qtde'
+            },
+            fill: { value: '#0B5890' },
+            fillOpacity: { value: 0.8 },
+            stroke: { value: 'white' },
             x: { field: 'x' },
             y: { field: 'y' }
           }

@@ -36,6 +36,10 @@ export function AmeacaPie() {
           orient: 'none',
           legendX: 285,
           legendY: -30
+        },
+        scale: {
+          domain: ['Não informado', 'Não', 'Sim'],
+          range: ['#999999', '#A2C7F5', '#FC6A10']
         }
       }}
       tooltip={[

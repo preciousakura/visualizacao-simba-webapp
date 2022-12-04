@@ -36,6 +36,11 @@ export function CondicaoPie() {
           orient: 'none',
           legendX: 285,
           legendY: -30
+        },
+
+        scale: {
+          domain: ['Vivo', 'Morto'],
+          range: ['#A2C7F5', '#FC6A10']
         }
       }}
       tooltip={[

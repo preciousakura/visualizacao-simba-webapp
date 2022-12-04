@@ -35,7 +35,6 @@ export function LineChart({ color, tooltip, title }: LineChartProps) {
         aggregate: 'count',
         field: 'data',
         type: 'quantitative',
-        scale: { domain: [0, 1500] },
         title: null,
         axis: {
           labelFontSize: 16

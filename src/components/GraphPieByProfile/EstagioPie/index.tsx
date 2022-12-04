@@ -36,6 +36,10 @@ export function EstagioPie() {
           orient: 'none',
           legendX: 285,
           legendY: -30
+        },
+        scale: {
+          domain: ['Adulto', 'Juvenil', 'Filhote', 'Feto', 'Indeterminado'],
+          range: ['#0B5890', '#4E8BC6', '#A2C7F5', '#CBDFF8', '#999999']
         }
       }}
       tooltip={[
