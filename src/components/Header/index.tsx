@@ -26,8 +26,8 @@ export function Header() {
             </b>{' '}
             do estado do Rio de Janeiro, no período de 2015 a 2018, e tem por
             objetivo entender o perfil dos animais encontrados. É possível
-            realizar análise de distribuição das ocorrências por região, tempo e
-            porcentagem de condição.
+            realizar análise de distribuição das ocorrências por região, tempo,
+            características e relações taxonômicas.
           </p>
         </div>
       </div>

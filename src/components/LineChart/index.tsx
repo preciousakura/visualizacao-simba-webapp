@@ -30,8 +30,6 @@ LineChartProps) {
       point: true
     },
 
-    //transform: [aggregate],
-
     encoding: {
       x: {
         timeUnit: 'year',

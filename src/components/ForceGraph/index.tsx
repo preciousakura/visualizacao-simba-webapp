@@ -96,6 +96,14 @@ export function ForceGraph({}: ForceGraphProps) {
       }
     ],
 
+    legends: [
+      {
+        fill: 'color',
+        orient: 'bottom-right',
+        title: 'Taxonomia'
+      }
+    ],
+
     marks: [
       {
         name: 'nodes',
@@ -134,7 +142,7 @@ export function ForceGraph({}: ForceGraphProps) {
             tooltip: [{ signal: 'datum' }]
           },
           hover: {
-            stroke: { value: 'purple' },
+            stroke: { value: '#6eb365' },
             strokeWidth: { value: 3 },
             zindex: { value: 1 }
           }

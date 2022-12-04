@@ -22,7 +22,7 @@ import {
   SexoPie
 } from '../../components/GraphPieByProfile';
 const { Option } = Select;
-import { Box, BoxColumn, BoxText } from './styles';
+import { Box, BoxText } from './styles';
 
 export function Home() {
   const [occByType, setOccByType] = useState('Bar');
@@ -34,16 +34,17 @@ export function Home() {
       <h2>Ocorrências por município</h2>
       <Map />
 
+      <h2>Seleção por perfil</h2>
       <Tabs>
         <Tabs.TabPane tab="Condição" key="item-1">
           <CondicaoPie />
           <CondicaoLine />
         </Tabs.TabPane>
-        <Tabs.TabPane tab="Estágio" key="item-2">
+        <Tabs.TabPane tab="Estágio de Desenvolvimento" key="item-2">
           <EstagioPie />
           <EstagioLine />
         </Tabs.TabPane>
-        <Tabs.TabPane tab="Ameaça" key="item-3">
+        <Tabs.TabPane tab="Ameaça de Extinção" key="item-3">
           <AmeacaPie />
           <AmeacaLine />
         </Tabs.TabPane>
@@ -53,12 +54,8 @@ export function Home() {
         </Tabs.TabPane>
       </Tabs>
 
-      <h2>Taxonomia</h2>
-      <p>
-        A seguir é mostrado o ranking com as classificações mais encontradas
-        pelos Projetos, além de ser possível analisar tais relações taxonômicas
-        entre si com o grafo em seguida.
-      </p>
+      <h2>Ranking por classificação</h2>
+
       <BoxText>
         <span className="text">Quantidade de ocorrências por: </span>
         <Select
@@ -103,6 +100,8 @@ export function Home() {
       ) : (
         <FamiliaBar />
       )}
+
+      <h2>Relações taxonômicas</h2>
       <ForceGraph />
     </Box>
   );

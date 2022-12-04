@@ -1,3 +1,4 @@
+import { Footer } from './components/Footer';
 import { DataProvider } from './hooks/useData';
 import { FilterProvider } from './hooks/useFilter';
 import { Home } from './pages';
@@ -7,6 +8,7 @@ function App() {
     <FilterProvider>
       <DataProvider>
         <Home />
+        <Footer />
       </DataProvider>
     </FilterProvider>
   );

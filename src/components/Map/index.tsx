@@ -117,7 +117,7 @@ export function Map({}: MapProps) {
         from: { data: 'table' },
         encode: {
           update: {
-            tooltip: [{ signal: 'datum.municipio' }],
+            tooltip: [{ signal: 'datum' }],
             size: {
               scale: 'size',
               field: 'Qtde'

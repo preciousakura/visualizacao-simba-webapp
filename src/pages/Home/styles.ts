@@ -9,6 +9,10 @@ export const Box = styled.div`
   .ant-select {
     width: 210px;
   }
+
+  h2 {
+    margin: 1rem 0;
+  }
 `;
 
 export const BoxColumn = styled.div`
