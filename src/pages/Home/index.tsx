@@ -1,12 +1,6 @@
 import { Select, Tabs } from 'antd';
 import { useState } from 'react';
-import {
-  Filter,
-  ForceGraph,
-  Header,
-  HorizontalGroupBar,
-  Map
-} from '../../components';
+import { Filter, ForceGraph, Header, Map } from '../../components';
 import {
   ClasseBar,
   EspecieBar,
@@ -35,16 +29,11 @@ export function Home() {
   return (
     <Box>
       <Header />
+
       <Filter />
       <h2>Ocorrências por município</h2>
       <Map />
-      <h2>Perfil</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
+
       <Tabs>
         <Tabs.TabPane tab="Condição" key="item-1">
           <CondicaoPie />
@@ -63,12 +52,12 @@ export function Home() {
           <SexoLine />
         </Tabs.TabPane>
       </Tabs>
+
       <h2>Taxonomia</h2>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+        A seguir é mostrado o ranking com as classificações mais encontradas
+        pelos Projetos, além de ser possível analisar tais relações taxonômicas
+        entre si com o grafo em seguida.
       </p>
       <BoxText>
         <span className="text">Quantidade de ocorrências por: </span>
@@ -90,11 +79,11 @@ export function Home() {
           <Option key="Família" value="Família">
             Família
           </Option>
-          <Option key="Espécie" value="Espécie">
-            Espécie
-          </Option>
           <Option key="Gênero" value="Gênero">
             Gênero
+          </Option>
+          <Option key="Espécie" value="Espécie">
+            Espécie
           </Option>
         </Select>
       </BoxText>
@@ -107,10 +96,10 @@ export function Home() {
         </>
       ) : occByType === 'Subordem' ? (
         <SubordemBar />
-      ) : occByType === 'Espécie' ? (
-        <EspecieBar />
       ) : occByType === 'Gênero' ? (
         <GeneroBar />
+      ) : occByType === 'Espécie' ? (
+        <EspecieBar />
       ) : (
         <FamiliaBar />
       )}

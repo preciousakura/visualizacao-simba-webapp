@@ -6,7 +6,7 @@ import {
   useMemo,
   useState
 } from 'react';
-import { Data } from 'simba';
+import { Data, Node, Link } from 'simba';
 import * as d3 from 'd3';
 import { useFilter } from './useFilter';
 import * as turf from '@turf/turf';
@@ -18,12 +18,20 @@ interface DataContextProviderProps {
 
 interface DataContextDataProps {
   data: { table: Data[] };
+  graph: { nodes_data: Node[]; links_data: Link[] };
 }
 
 export const DataContext = createContext({} as DataContextDataProps);
 
 export function DataProvider({ children }: DataContextProviderProps) {
   const [data, setData] = useState<{ table: Data[] }>({ table: [] });
+  const [graph, setGraph] = useState<{
+    nodes_data: Node[];
+    links_data: Link[];
+  }>({
+    nodes_data: [],
+    links_data: []
+  });
   const [filterData, setFilterData] = useState<{ table: Data[] }>({
     table: []
   });
@@ -116,15 +124,50 @@ export function DataProvider({ children }: DataContextProviderProps) {
         (sexo ? d.sexo.toLowerCase() === sexo?.toLowerCase() : true) &&
         (estagio ? d.estagio.toLowerCase() === estagio?.toLowerCase() : true)
     );
+
+    const count = data.table.reduce((acc: any, cur: any) => {
+      acc[cur.especie] = (acc[cur.especie] || 0) + 1;
+      acc[cur.classe] = (acc[cur.classe] || 0) + 1;
+      acc[cur.familia] = (acc[cur.familia] || 0) + 1;
+      return acc;
+    }, {});
+
+    const c = graph.nodes_data.map((g: any) => {
+      return { ...g, count: count[g.name] ?? 0 };
+    });
+
+    setGraph({ ...graph, nodes_data: c });
     setData({ table: d });
   }, [city, condicao, ameaca, estagio, sexo]);
 
-  console.log(data);
+  useEffect(() => {
+    const res = async () => {
+      await d3
+        .json(
+          'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/forceGraph.json'
+        )
+        .then((res: any) => {
+          const count = data.table.reduce((acc: any, cur: any) => {
+            acc[cur.especie] = (acc[cur.especie] || 0) + 1;
+            acc[cur.classe] = (acc[cur.classe] || 0) + 1;
+            acc[cur.familia] = (acc[cur.familia] || 0) + 1;
+            return acc;
+          }, {});
+
+          const c = res.nodes.map((g: any) => {
+            return { ...g, count: count[g.name] ?? 0 };
+          });
+          setGraph({ links_data: res.links, nodes_data: c });
+        });
+    };
+    res();
+  }, [data]);
 
   return (
     <DataContext.Provider
       value={{
-        data
+        data,
+        graph
       }}
     >
       {children}

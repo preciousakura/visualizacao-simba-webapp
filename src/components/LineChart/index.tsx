@@ -3,12 +3,18 @@ import { useBoxWidth } from '../../hooks/useBoxWidth';
 import { useData } from '../../hooks/useData';
 
 interface LineChartProps {
+  aggregate?: any;
   color?: any;
   tooltip?: any[];
   title?: string;
 }
 
-export function LineChart({ color, tooltip, title }: LineChartProps) {
+export function LineChart({
+  color,
+  tooltip,
+  title
+}: //aggregate
+LineChartProps) {
   const { boxRef, width } = useBoxWidth<HTMLDivElement>();
   const { data } = useData();
 
@@ -23,6 +29,8 @@ export function LineChart({ color, tooltip, title }: LineChartProps) {
       type: 'line',
       point: true
     },
+
+    //transform: [aggregate],
 
     encoding: {
       x: {

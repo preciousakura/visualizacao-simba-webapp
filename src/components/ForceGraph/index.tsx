@@ -1,4 +1,4 @@
-import { Vega, VegaLite, VisualizationSpec } from 'react-vega';
+import { Vega, VisualizationSpec } from 'react-vega';
 import { useBoxWidth } from '../../hooks/useBoxWidth';
 import { useData } from '../../hooks/useData';
 
@@ -6,7 +6,8 @@ interface ForceGraphProps {}
 
 export function ForceGraph({}: ForceGraphProps) {
   const { boxRef, width } = useBoxWidth<HTMLDivElement>();
-  const { data } = useData();
+  const { graph } = useData();
+  console.log('oi', graph);
 
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega/v5.json',
@@ -20,11 +21,7 @@ export function ForceGraph({}: ForceGraphProps) {
     signals: [
       { name: 'cx', update: 'width / 2' },
       { name: 'cy', update: 'height / 2' },
-      {
-        name: 'nodeRadius',
-        value: 10,
-        bind: { input: 'range', min: 1, max: 50, step: 1 }
-      },
+
       {
         name: 'nodeCharge',
         value: -30,
@@ -77,14 +74,10 @@ export function ForceGraph({}: ForceGraphProps) {
 
     data: [
       {
-        name: 'node-data',
-        url: 'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/forceGraph.json',
-        format: { type: 'json', property: 'nodes' }
+        name: 'nodes_data'
       },
       {
-        name: 'link-data',
-        url: 'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/forceGraph.json',
-        format: { type: 'json', property: 'links' }
+        name: 'links_data'
       }
     ],
 
@@ -92,8 +85,14 @@ export function ForceGraph({}: ForceGraphProps) {
       {
         name: 'color',
         type: 'ordinal',
-        domain: { data: 'node-data', field: 'group' },
+        domain: { data: 'nodes_data', field: 'group' },
         range: { scheme: 'category20' }
+      },
+      {
+        name: 'size',
+        type: 'linear',
+        domain: { data: 'nodes_data', field: 'count' },
+        range: [100, 1000]
       }
     ],
 
@@ -103,7 +102,7 @@ export function ForceGraph({}: ForceGraphProps) {
         type: 'symbol',
         zindex: 1,
 
-        from: { data: 'node-data' },
+        from: { data: 'nodes_data' },
         on: [
           {
             trigger: 'fix',
@@ -124,7 +123,10 @@ export function ForceGraph({}: ForceGraphProps) {
             stroke: { value: 'white' }
           },
           update: {
-            size: { signal: '2 * nodeRadius * nodeRadius' },
+            size: {
+              scale: 'size',
+              field: 'count'
+            },
             cursor: { value: 'pointer' },
             stroke: { value: 'white' },
             strokeWidth: { value: 1 },
@@ -146,11 +148,11 @@ export function ForceGraph({}: ForceGraphProps) {
             signal: 'force',
             forces: [
               { force: 'center', x: { signal: 'cx' }, y: { signal: 'cy' } },
-              { force: 'collide', radius: { signal: 'nodeRadius' } },
+              { force: 'collide', radius: 15 },
               { force: 'nbody', strength: { signal: 'nodeCharge' } },
               {
                 force: 'link',
-                links: 'link-data',
+                links: 'links_data',
                 distance: { signal: 'linkDistance' }
               }
             ]
@@ -159,7 +161,7 @@ export function ForceGraph({}: ForceGraphProps) {
       },
       {
         type: 'path',
-        from: { data: 'link-data' },
+        from: { data: 'links_data' },
         interactive: false,
         encode: {
           update: {
@@ -183,7 +185,7 @@ export function ForceGraph({}: ForceGraphProps) {
   };
   return (
     <div ref={boxRef}>
-      <Vega data={data} spec={spec} />
+      <Vega data={graph} spec={spec} />
     </div>
   );
 }

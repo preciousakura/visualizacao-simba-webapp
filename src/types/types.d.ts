@@ -16,4 +16,14 @@ declare module 'simba' {
     latitude: number;
     longitude: number;
   }
+  interface Node {
+    name: string;
+    group: number;
+    index: number;
+    count: number;
+  }
+  interface Link {
+    source: number;
+    target: number;
+  }
 }
