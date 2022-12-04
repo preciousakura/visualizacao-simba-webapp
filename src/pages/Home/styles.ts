@@ -5,14 +5,6 @@ export const Box = styled.div`
   margin: 0 auto;
   padding: 3rem;
   background: #effafc;
-  .vega-embed.has-actions {
-    width: 100%;
-    svg.marks,
-    canvas.marks {
-      width: 100% !important;
-      height: auto !important;
-    }
-  }
 
   .ant-select {
     width: 210px;

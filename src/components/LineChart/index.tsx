@@ -15,7 +15,7 @@ export function LineChart({ color, tooltip, title }: LineChartProps) {
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     data: { name: 'table' },
-    width: width,
+    width: width - 130,
     height: 200,
     background: '#effafc',
     title: title,

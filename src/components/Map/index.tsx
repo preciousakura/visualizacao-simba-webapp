@@ -9,7 +9,7 @@ export function Map({}: MapProps) {
   const { data } = useData();
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega/v5.json',
-    width: width,
+    width: width - 100,
     height: 600,
     padding: { top: 25, left: 0, right: 0, bottom: 0 },
     autosize: 'none',
@@ -117,7 +117,7 @@ export function Map({}: MapProps) {
         from: { data: 'table' },
         encode: {
           update: {
-            tooltip: [{ field: 'municipio' }],
+            tooltip: [{ signal: 'datum.municipio' }],
             size: {
               scale: 'size',
               field: 'Qtde'

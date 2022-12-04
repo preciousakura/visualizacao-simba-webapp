@@ -22,7 +22,7 @@ export function PieChart({
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     data: { name: 'table' },
-    width: width,
+    width: width - 50,
     height: 300,
     background: '#effafc',
     padding: { top: 24, right: 24, bottom: 24, left: 24 },

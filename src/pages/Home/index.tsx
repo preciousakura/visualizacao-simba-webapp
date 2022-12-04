@@ -1,6 +1,12 @@
 import { Select, Tabs } from 'antd';
 import { useState } from 'react';
-import { Filter, Header, HorizontalGroupBar, Map } from '../../components';
+import {
+  Filter,
+  ForceGraph,
+  Header,
+  HorizontalGroupBar,
+  Map
+} from '../../components';
 import {
   ClasseBar,
   EspecieBar,
@@ -108,6 +114,7 @@ export function Home() {
       ) : (
         <FamiliaBar />
       )}
+      <ForceGraph />
     </Box>
   );
 }

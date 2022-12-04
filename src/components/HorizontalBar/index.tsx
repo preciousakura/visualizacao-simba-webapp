@@ -23,7 +23,7 @@ export function HorizontalBar({
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
 
-    width: width,
+    width: width - 250,
     background: '#effafc',
     height: height,
     mark: 'bar',
