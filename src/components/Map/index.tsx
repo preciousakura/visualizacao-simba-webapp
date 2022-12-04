@@ -103,7 +103,7 @@ export function Map({}: MapProps) {
         from: { data: 'states' },
         encode: {
           enter: {
-            fill: { value: '#dedede' },
+            fill: { value: '#c1dfe9' },
             stroke: { value: 'white' }
           },
           update: {

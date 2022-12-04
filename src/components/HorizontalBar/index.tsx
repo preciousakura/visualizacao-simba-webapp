@@ -24,7 +24,7 @@ export function HorizontalBar({
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
 
     width: width,
-    background: '#F6F6F6',
+    background: '#effafc',
     height: height,
     mark: 'bar',
     encoding: {

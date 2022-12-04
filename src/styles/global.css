@@ -62,7 +62,8 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #393E46;
-    background: #F7F7F7;
+    background: url('../assets/bg.jpg') no-repeat bottom,#effafc;
+    background-size: contain;
 
   }
   a:hover {

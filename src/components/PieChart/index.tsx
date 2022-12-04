@@ -24,7 +24,7 @@ export function PieChart({
     data: { name: 'table' },
     width: width,
     height: 300,
-    background: '#F6F6F6',
+    background: '#effafc',
     padding: { top: 24, right: 24, bottom: 24, left: 24 },
     transform: [aggregate, window, calculate],
 

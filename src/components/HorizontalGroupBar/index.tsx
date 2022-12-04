@@ -12,7 +12,7 @@ export function HorizontalGroupBar({}: HorizontalGroupBarProps) {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     data: { name: 'table' },
     width: width,
-    background: '#F6F6F6',
+    background: '#effafc',
     height: 400,
     mark: 'bar',
     encoding: {

@@ -17,7 +17,7 @@ export function LineChart({ color, tooltip, title }: LineChartProps) {
     data: { name: 'table' },
     width: width,
     height: 200,
-    background: '#F6F6F6',
+    background: '#effafc',
     title: title,
     mark: {
       type: 'line',
