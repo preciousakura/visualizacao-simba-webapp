@@ -1,7 +1,8 @@
 # Simba Webapp 
 Frontend do trabalho final da cadeira de Visualização de Dados do curso Ciência da Computação, UFC - 2022.2.
 </br>
-Equipe: <a href="">Isabel Cristina</a>, <a href="">Luiza Clara</a> e <a href="">Sérgio Garcia</a>
+Equipe: <a href="https://github.com/preciousakura">Isabel Cristina</a>, <a href="https://github.com/luizaclara">Luiza Clara</a> e <a href="https://github.com/SergioGarciaBF">Sérgio Garcia</a>
+https://preciousakura.github.io/visualizacao-simba-webapp/
 
 ## Compilação
 
