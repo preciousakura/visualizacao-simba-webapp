@@ -11,10 +11,7 @@ export function SexoLine() {
           range: ['#999999', '#A2C7F5', '#FC6A10']
         }
       }}
-      tooltip={[
-        { field: 'data', type: 'nominal' },
-        { field: 'sexo', type: 'nominal' }
-      ]}
+      tooltip={{ field: 'sexo', type: 'nominal', title: 'Sexo' }}
     />
   );
 }

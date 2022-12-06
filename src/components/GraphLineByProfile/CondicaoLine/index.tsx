@@ -11,10 +11,11 @@ export function CondicaoLine() {
           range: ['#A2C7F5', '#FC6A10']
         }
       }}
-      tooltip={[
-        { field: 'data', type: 'nominal' },
-        { field: 'condicao', type: 'nominal' }
-      ]}
+      tooltip={{
+        field: 'condicao',
+        type: 'nominal',
+        title: 'Condição'
+      }}
     />
   );
 }

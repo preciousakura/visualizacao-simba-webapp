@@ -5,7 +5,7 @@ import { useData } from '../../hooks/useData';
 interface LineChartProps {
   aggregate?: any;
   color?: any;
-  tooltip?: any[];
+  tooltip?: any;
   title?: string;
 }
 
@@ -46,8 +46,19 @@ LineChartProps) {
           labelFontSize: 16
         }
       },
-      color,
-      tooltip: tooltip
+      color: {
+        ...color,
+        legend: null
+      },
+      tooltip: [
+        tooltip,
+        {
+          aggregate: 'count',
+          field: 'data',
+          type: 'quantitative',
+          title: 'Quantidade'
+        }
+      ]
     }
   };
 

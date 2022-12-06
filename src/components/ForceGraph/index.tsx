@@ -84,7 +84,7 @@ export function ForceGraph({}: ForceGraphProps) {
       {
         name: 'color',
         type: 'ordinal',
-        domain: { data: 'nodes_data', field: 'group' },
+        domain: { data: 'nodes_data', field: 'group_name' },
         range: { scheme: 'category20' }
       },
       {
@@ -92,12 +92,6 @@ export function ForceGraph({}: ForceGraphProps) {
         type: 'linear',
         domain: { data: 'nodes_data', field: 'count' },
         range: [100, 1000]
-      },
-      {
-        name: 'legend_labels',
-        type: 'ordinal',
-        domain: [0, 1, 2],
-        range: ['Classe', 'Família', 'Espécie']
       }
     ],
 
@@ -132,7 +126,7 @@ export function ForceGraph({}: ForceGraphProps) {
 
         encode: {
           enter: {
-            fill: { scale: 'color', field: 'group' },
+            fill: { scale: 'color', field: 'group_name' },
             stroke: { value: 'white' }
           },
           update: {
@@ -144,7 +138,9 @@ export function ForceGraph({}: ForceGraphProps) {
             stroke: { value: 'white' },
             strokeWidth: { value: 1 },
             zindex: { value: 0 },
-            tooltip: [{ signal: 'datum' }]
+            tooltip: {
+              signal: "{'Nome': datum.name, 'Quantidade': datum.count,}"
+            }
           },
           hover: {
             stroke: { value: '#6eb365' },

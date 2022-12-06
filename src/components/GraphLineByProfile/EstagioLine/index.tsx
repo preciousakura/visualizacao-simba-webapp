@@ -11,10 +11,11 @@ export function EstagioLine() {
           range: ['#0B5890', '#4E8BC6', '#A2C7F5', '#CBDFF8', '#999999']
         }
       }}
-      tooltip={[
-        { field: 'data', type: 'nominal' },
-        { field: 'estagio', type: 'nominal' }
-      ]}
+      tooltip={{
+        field: 'estagio',
+        type: 'nominal',
+        title: 'Estágio de Desenvolvimento'
+      }}
     />
   );
 }

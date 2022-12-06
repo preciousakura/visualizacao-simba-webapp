@@ -24,12 +24,11 @@ export function AmeacaLine() {
           range: ['#999999', '#A2C7F5', '#FC6A10']
         }
       }}
-      //      tooltip={[
-      //       { field: 'Qtde', type: 'quantitative' },
-      ///     { field: 'ameacada', type: 'nominal' }
-      /// ]}
-
-      tooltip={[{ signal: 'datum' }]}
+      tooltip={{
+        field: 'ameacada',
+        type: 'nominal',
+        title: 'Ameçada de Extinção'
+      }}
     />
   );
 }

@@ -8,26 +8,23 @@ export function Header() {
         <img src="https://simba.petrobras.com.br/simba/web/marca.png" />
       </div>
 
-      <p className="equipe">
-        Equipe: Isabel Cristina, Luiza Clara e Sérgio Garcia
-      </p>
       <p className="tag-data">Última atualização: 04/12/2022</p>
       <div className="box-intro">
         <div className="text">
           <p>
-            Este portfólio utiliza dados coletados pelos{' '}
+            Nosso trabalho é uma análise de dados públicos do{' '}
             <b>
               <a
                 target="_blank"
-                href="https://simba.petrobras.com.br/simba/web/sistema/pmp/9/individualfaunaoccurrence/"
+                href="https://simba.petrobras.com.br/simba/web/sistema/"
               >
-                Projetos de Monitoramento de Praias
+                Sistema de Informação de Monitoramento da Biota Aquática (SIMBA)
               </a>
-            </b>{' '}
-            do estado do Rio de Janeiro, no período de 2015 a 2018, e tem por
-            objetivo entender o perfil dos animais encontrados. É possível
-            realizar análise de distribuição das ocorrências por região, tempo,
-            características e relações taxonômicas.
+            </b>
+            , obtidos por meio dos Projetos de Monitoramento de Praias, do
+            estado do Rio de Janeiro, no período de 2015 a 2018. O objetivo das
+            visualizações criadas pela equipe é, primordialmente, avaliar o
+            perfil dos animais encontrados.
           </p>
         </div>
       </div>

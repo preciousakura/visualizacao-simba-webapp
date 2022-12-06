@@ -141,26 +141,28 @@ export function DataProvider({ children }: DataContextProviderProps) {
   }, [city, condicao, ameaca, estagio, sexo]);
 
   useEffect(() => {
-    const res = async () => {
-      await d3
-        .json(
-          'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/forceGraph.json'
-        )
-        .then((res: any) => {
-          const count = data.table.reduce((acc: any, cur: any) => {
-            acc[cur.especie] = (acc[cur.especie] || 0) + 1;
-            acc[cur.classe] = (acc[cur.classe] || 0) + 1;
-            acc[cur.familia] = (acc[cur.familia] || 0) + 1;
-            return acc;
-          }, {});
+    if (data) {
+      const res = async () => {
+        await d3
+          .json(
+            'https://raw.githubusercontent.com/preciousakura/visualizacao-simba-webapp/master/src/data/graph.json'
+          )
+          .then((res: any) => {
+            const count = data.table.reduce((acc: any, cur: any) => {
+              acc[cur.especie] = (acc[cur.especie] || 0) + 1;
+              acc[cur.classe] = (acc[cur.classe] || 0) + 1;
+              acc[cur.familia] = (acc[cur.familia] || 0) + 1;
+              return acc;
+            }, {});
 
-          const c = res.nodes.map((g: any) => {
-            return { ...g, count: count[g.name] ?? 0 };
+            const c = res.nodes.map((g: any) => {
+              return { ...g, count: count[g.name] ?? 0 };
+            });
+            setGraph({ links_data: res.links, nodes_data: c });
           });
-          setGraph({ links_data: res.links, nodes_data: c });
-        });
-    };
-    res();
+      };
+      res();
+    }
   }, [data]);
 
   return (
