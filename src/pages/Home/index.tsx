@@ -23,9 +23,10 @@ import {
 } from '../../components/GraphPieByProfile';
 const { Option } = Select;
 import { Box, BoxText } from './styles';
+const { TabPane } = Tabs;
 
 export function Home() {
-  const [occByType, setOccByType] = useState('Bar');
+  const [occByType, setOccByType] = useState('Classe');
   return (
     <Box>
       <Header />
@@ -36,22 +37,22 @@ export function Home() {
 
       <h2>Seleção por perfil</h2>
       <Tabs>
-        <Tabs.TabPane tab="Condição" key="item-1">
+        <TabPane tab="Condição" key="item-1">
           <CondicaoPie />
           <CondicaoLine />
-        </Tabs.TabPane>
-        <Tabs.TabPane tab="Estágio de Desenvolvimento" key="item-2">
+        </TabPane>
+        <TabPane tab="Estágio de Desenvolvimento" key="item-2">
           <EstagioPie />
           <EstagioLine />
-        </Tabs.TabPane>
-        <Tabs.TabPane tab="Ameaça de Extinção" key="item-3">
+        </TabPane>
+        <TabPane tab="Ameaça de Extinção" key="item-3">
           <AmeacaPie />
           <AmeacaLine />
-        </Tabs.TabPane>
-        <Tabs.TabPane tab="Sexo" key="item-4">
+        </TabPane>
+        <TabPane tab="Sexo" key="item-4">
           <SexoPie />
           <SexoLine />
-        </Tabs.TabPane>
+        </TabPane>
       </Tabs>
 
       <h2>Ranking por classificação</h2>

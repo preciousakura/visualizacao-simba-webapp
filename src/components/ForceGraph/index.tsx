@@ -7,7 +7,6 @@ interface ForceGraphProps {}
 export function ForceGraph({}: ForceGraphProps) {
   const { boxRef, width } = useBoxWidth<HTMLDivElement>();
   const { graph } = useData();
-  console.log('oi', graph);
 
   const spec: VisualizationSpec = {
     $schema: 'https://vega.github.io/schema/vega/v5.json',
@@ -93,6 +92,12 @@ export function ForceGraph({}: ForceGraphProps) {
         type: 'linear',
         domain: { data: 'nodes_data', field: 'count' },
         range: [100, 1000]
+      },
+      {
+        name: 'legend_labels',
+        type: 'ordinal',
+        domain: [0, 1, 2],
+        range: ['Classe', 'Família', 'Espécie']
       }
     ],
 

@@ -3,371 +3,445 @@
     {
       "name": "Reptilia",
       "group": 0,
+      "group_name": "Classe",
       "index": 0
     },
     {
       "name": "Aves",
       "group": 0,
+      "group_name": "Classe",
       "index": 1
     },
     {
       "name": "Pontoporidae",
       "group": 1,
+      "group_name": "Família",
       "index": 2
     },
     {
       "name": "Mammalia",
       "group": 0,
+      "group_name": "Classe",
       "index": 3
     },
     {
       "name": "Mammalia",
       "group": 1,
+      "group_name": "Família",
       "index": 4
     },
     {
       "name": "Sulidae",
       "group": 1,
+      "group_name": "Família",
       "index": 5
     },
     {
       "name": "Delphinidae",
       "group": 1,
+      "group_name": "Família",
       "index": 6
     },
     {
       "name": "Phalacrocoracidae",
       "group": 1,
+      "group_name": "Família",
       "index": 7
     },
     {
       "name": "Fregatidae",
       "group": 1,
+      "group_name": "Família",
       "index": 8
     },
     {
       "name": "Ardeidae",
       "group": 1,
+      "group_name": "Família",
       "index": 9
     },
     {
       "name": "Laridae",
       "group": 1,
+      "group_name": "Família",
       "index": 10
     },
     {
       "name": "Spheniscidae",
       "group": 1,
+      "group_name": "Família",
       "index": 11
     },
     {
       "name": "Procellariidae",
       "group": 1,
+      "group_name": "Família",
       "index": 12
     },
     {
       "name": "Diomedeidae",
       "group": 1,
+      "group_name": "Família",
       "index": 13
     },
     {
       "name": "Dermochelyidae",
       "group": 1,
+      "group_name": "Família",
       "index": 14
     },
     {
       "name": "Balaenopteridae",
       "group": 1,
+      "group_name": "Família",
       "index": 15
     },
     {
       "name": "Iniidae",
       "group": 1,
+      "group_name": "Família",
       "index": 16
     },
     {
       "name": "Otariidae",
       "group": 1,
+      "group_name": "Família",
       "index": 17
     },
     {
       "name": "Hydrobatidae",
       "group": 1,
+      "group_name": "Família",
       "index": 18
     },
     {
       "name": "Mustelidae",
       "group": 1,
+      "group_name": "Família",
       "index": 19
     },
     {
       "name": "Rallidae",
       "group": 1,
+      "group_name": "Família",
       "index": 20
     },
     {
       "name": "Rallidae",
       "group": 1,
+      "group_name": "Família",
       "index": 21
     },
     {
       "name": "Charadriidae",
       "group": 1,
+      "group_name": "Família",
       "index": 22
     },
     {
       "name": "Phocidae",
       "group": 1,
+      "group_name": "Família",
       "index": 23
     },
     {
       "name": "Phocidae",
       "group": 1,
+      "group_name": "Família",
       "index": 24
     },
     {
       "name": "Chelonia mydas",
       "group": 2,
+      "group_name": "Espécie",
       "index": 25
     },
     {
       "name": "Sula leucogaster",
       "group": 2,
+      "group_name": "Espécie",
       "index": 26
     },
     {
       "name": "Sula leucogaster",
       "group": 2,
+      "group_name": "Espécie",
       "index": 27
     },
     {
       "name": "Phalacrocorax brasilianus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 28
     },
     {
       "name": "Fregata magnificens",
       "group": 2,
+      "group_name": "Espécie",
       "index": 29
     },
     {
       "name": "Caretta caretta",
       "group": 2,
+      "group_name": "Espécie",
       "index": 30
     },
     {
       "name": "Spheniscus magellanicus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 31
     },
     {
       "name": "Larus dominicanus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 32
     },
     {
       "name": "Nycticorax nycticorax",
       "group": 2,
+      "group_name": "Espécie",
       "index": 33
     },
     {
       "name": "Ardea alba",
       "group": 2,
+      "group_name": "Espécie",
       "index": 34
     },
     {
       "name": "Thalassarche chlororhynchos",
       "group": 2,
+      "group_name": "Espécie",
       "index": 35
     },
     {
       "name": "Puffinus puffinus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 36
     },
     {
       "name": "Lepidochelys olivacea",
       "group": 2,
+      "group_name": "Espécie",
       "index": 37
     },
     {
       "name": "Ardea cocoi",
       "group": 2,
+      "group_name": "Espécie",
       "index": 38
     },
     {
       "name": "Thalasseus acuflavidus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 39
     },
     {
       "name": "Steno bredanensis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 40
     },
     {
       "name": "Dermochelys coriacea",
       "group": 2,
+      "group_name": "Espécie",
       "index": 41
     },
     {
       "name": "Egretta thula",
       "group": 2,
+      "group_name": "Espécie",
       "index": 42
     },
     {
       "name": "Megaptera novaeangliae",
       "group": 2,
+      "group_name": "Espécie",
       "index": 43
     },
     {
       "name": "Tursiops truncatus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 44
     },
     {
       "name": "Pontoporia blainvillei",
       "group": 2,
+      "group_name": "Espécie",
       "index": 45
     },
     {
       "name": "Procellaria aequinoctialis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 46
     },
     {
       "name": "Calonectris diomedea borealis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 47
     },
     {
       "name": "Sterna hirundo",
       "group": 2,
+      "group_name": "Espécie",
       "index": 48
     },
     {
       "name": "Bubulcus ibis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 49
     },
     {
       "name": "Arctocephalus tropicalis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 50
     },
     {
       "name": "Eretmochelys imbricata",
       "group": 2,
+      "group_name": "Espécie",
       "index": 51
     },
     {
       "name": "Oceanitidae",
       "group": 1,
+      "group_name": "Família",
       "index": 52
     },
     {
       "name": "Thalassarche melanophris",
       "group": 2,
+      "group_name": "Espécie",
       "index": 53
     },
     {
       "name": "Stellena frontalis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 54
     },
     {
       "name": "Thalasseus maximus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 55
     },
     {
       "name": "Butorides striata",
       "group": 2,
+      "group_name": "Espécie",
       "index": 56
     },
     {
       "name": "Puffinus gravis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 57
     },
     {
       "name": "Egretta caerulea",
       "group": 2,
+      "group_name": "Espécie",
       "index": 58
     },
     {
       "name": "Oceanites oceanicus",
       "group": 2,
+      "group_name": "Espécie",
       "index": 59
     },
     {
       "name": "Lontra longicaudis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 60
     },
     {
       "name": "Calidris alba",
       "group": 2,
+      "group_name": "Espécie",
       "index": 61
     },
     {
       "name": "Nyctanassa violacea",
       "group": 2,
+      "group_name": "Espécie",
       "index": 62
     },
     {
       "name": "Delphinus delphis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 63
     },
     {
       "name": "Ixobrychus involucris",
       "group": 2,
+      "group_name": "Espécie",
       "index": 64
     },
     {
       "name": "Aramides saracura",
       "group": 2,
+      "group_name": "Espécie",
       "index": 65
     },
     {
       "name": "Pterodroma mollis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 66
     },
     {
       "name": "Lobodon carcinophaga",
       "group": 2,
+      "group_name": "Espécie",
       "index": 67
     },
     {
       "name": "Sterna hirundinacea",
       "group": 2,
+      "group_name": "Espécie",
       "index": 68
     },
     {
       "name": "Halobaena caerulea",
       "group": 2,
+      "group_name": "Espécie",
       "index": 69
     },
     {
       "name": "Arctocephalus australis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 70
     },
     {
       "name": "Gallinula angulata",
       "group": 2,
+      "group_name": "Espécie",
       "index": 71
     },
     {
       "name": "Stenella longirostris",
       "group": 2,
+      "group_name": "Espécie",
       "index": 72
     },
     {
       "name": "Vanellus chilensis",
       "group": 2,
+      "group_name": "Espécie",
       "index": 73
     }
   ],
