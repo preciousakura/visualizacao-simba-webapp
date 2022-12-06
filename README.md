@@ -3,7 +3,7 @@ Frontend do trabalho final da cadeira de Visualização de Dados do curso Ciênc
 </br>
 Equipe: <a href="https://github.com/preciousakura">Isabel Cristina</a>, <a href="https://github.com/luizaclara">Luiza Clara</a> e <a href="https://github.com/SergioGarciaBF">Sérgio Garcia</a>
 </br>
-Veja o trabalho <a href="[https://github.com/preciousakura](https://preciousakura.github.io/visualizacao-simba-webapp/)">aqui</a>
+Veja o trabalho <a href="https://preciousakura.github.io/visualizacao-simba-webapp/">aqui</a>
 
 
 ## Compilação
