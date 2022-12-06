@@ -8,7 +8,7 @@ export function Header() {
         <img src="https://simba.petrobras.com.br/simba/web/marca.png" />
       </div>
 
-      <p className="tag-data">Última atualização: 04/12/2022</p>
+      <p className="tag-data">Última atualização: 06/12/2022</p>
       <div className="box-intro">
         <div className="text">
           <p>
